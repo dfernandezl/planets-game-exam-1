@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Starbase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Planets Game Exam</a> &gt; <a href="index.source.html" class="el_package">com.drpicox.game.starbases</a> &gt; <span class="el_source">Starbase.java</span></div><h1>Starbase.java</h1><pre class="source lang-java linenums">package com.drpicox.game.starbases;
+
+import com.drpicox.game.entities.Coordinates;
+import com.drpicox.game.entities.Entity;
+import com.drpicox.game.players.Player;
+import com.drpicox.game.stars.Star;
+
+import javax.persistence.ManyToOne;
+import java.util.Map;
+
+import static java.lang.Math.min;
+
+@javax.persistence.Entity
+public class Starbase extends Entity {
+
+    @ManyToOne
+    private Star star;
+
+    private int fuel;
+
+    Starbase(Star star, String name) {
+<span class="fc" id="L22">        super(star.getPlayer(), name, star.getCoordinates(), &quot;starbase&quot;);</span>
+
+<span class="fc" id="L24">        this.star = star;</span>
+<span class="fc" id="L25">        this.fuel = -2;</span>
+<span class="fc" id="L26">    }</span>
+<span class="fc" id="L27">    public Starbase() {} // JPA constructor</span>
+
+    public int getMaxFuel() {
+<span class="fc" id="L30">        return 10;</span>
+    }
+
+    void produceFuel() {
+<span class="fc" id="L34">        this.fuel = min(getMaxFuel(), fuel + 2);</span>
+<span class="fc" id="L35">    }</span>
+
+    void consumeFuel(int amount) {
+<span class="fc" id="L38">        this.fuel -= amount;</span>
+<span class="fc" id="L39">    }</span>
+
+    public int getFuel() {
+<span class="fc" id="L42">        return fuel;</span>
+    }
+
+    @Override
+    public Map&lt;String, Object&gt; getOwnJson() {
+<span class="fc" id="L47">        var result = super.getOwnJson();</span>
+<span class="fc" id="L48">        result.put(&quot;fuel&quot;, fuel);</span>
+<span class="fc" id="L49">        result.put(&quot;maxFuel&quot;, getMaxFuel());</span>
+<span class="fc" id="L50">        return result;</span>
+    }
+
+    /////// IMPORTANT NOTE:
+    //////
+    ////// The following code tell us that Entity is a bad abstraction
+    ////// and it carries too much complexity.
+    ////// Following the SOLID principles
+    ////// we should split Entity in:
+    //////   Entity (with id, name, and abstract getPlayer, ...)
+    //////   LocatedAssignableEntity (with player, coordinates)
+    //////   ComponentEntity (with relates to assignable entity)
+    ////// In fact Locatable, Composable, Assignable, are components of Entity, not Entity itself
+    ////// But, because it is code for an exam, no more abstractions are introduced
+    ////// neither you have during the exam.
+
+    @Override
+    public Player getPlayer() {
+<span class="fc" id="L68">        return star.getPlayer();</span>
+    }
+
+    @Override
+    public Coordinates getCoordinates() {
+<span class="fc" id="L73">        return star.getCoordinates();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

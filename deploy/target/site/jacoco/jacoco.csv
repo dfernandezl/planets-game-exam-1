@@ -1,0 +1,62 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Planets Game Exam,com.drpicox.game.maps.builders,MapBuilderController,0,100,0,2,0,31,0,7,0,6
+Planets Game Exam,com.drpicox.game.maps.builders,ThreeStarsMap,0,36,0,0,0,8,0,3,0,3
+Planets Game Exam,com.drpicox.game.maps.builders,MapConfiguration,0,33,0,2,0,9,0,8,0,7
+Planets Game Exam,com.drpicox.game.maps.builders,MapBuilderCollector,0,22,0,0,0,7,0,3,0,3
+Planets Game Exam,com.drpicox.game.maps.builders,MapPlayerConfiguration,0,19,0,0,0,7,0,5,0,5
+Planets Game Exam,com.drpicox.game.maps.builders,MapCodeNotFoundException,0,5,0,0,0,2,0,1,0,1
+Planets Game Exam,com.drpicox.game.maps.builders,TwoStarsMap,0,37,0,0,0,8,0,4,0,4
+Planets Game Exam,com.drpicox.game,Application,5,3,0,0,2,1,1,1,1,1
+Planets Game Exam,com.drpicox.game.game,PlayerGameResponse,0,93,0,0,0,19,0,5,0,5
+Planets Game Exam,com.drpicox.game.game,GameController,0,120,0,0,0,25,0,9,0,9
+Planets Game Exam,com.drpicox.game.game,SuccessResponse,0,22,0,0,0,6,0,3,0,3
+Planets Game Exam,com.drpicox.game.blog,BlogController,0,150,0,4,0,32,0,9,0,7
+Planets Game Exam,com.drpicox.game.blog,Post.new LinkedHashMap() {...},0,31,0,2,0,5,0,2,0,1
+Planets Game Exam,com.drpicox.game.blog,Post,0,94,0,8,0,25,0,12,0,8
+Planets Game Exam,com.drpicox.game.runners,CR100IncreaseTurnNumber,0,12,0,0,0,6,0,3,0,3
+Planets Game Exam,com.drpicox.game.runners,CR501StarBuildShip,0,89,0,6,0,24,0,7,0,4
+Planets Game Exam,com.drpicox.game.runners,CR500StarBuildStarbase,0,85,0,4,0,23,0,6,0,4
+Planets Game Exam,com.drpicox.game.runners,CR600DigMinerals,0,31,0,2,0,10,0,4,0,3
+Planets Game Exam,com.drpicox.game.runners,CR200RefuelShips,0,75,0,2,0,22,0,8,0,7
+Planets Game Exam,com.drpicox.game.runners,CR100ClearMessages,0,12,0,0,0,6,0,3,0,3
+Planets Game Exam,com.drpicox.game.runners,CR500StarbaseBuildShip,0,91,0,6,0,24,0,7,0,4
+Planets Game Exam,com.drpicox.game.runners,CR100Reproduce,0,28,0,2,0,9,0,4,0,3
+Planets Game Exam,com.drpicox.game.runners,CR300MoveShip,0,45,0,2,0,13,0,4,0,3
+Planets Game Exam,com.drpicox.game.runners,CR200LoadShip,0,306,0,24,0,63,0,19,0,7
+Planets Game Exam,com.drpicox.game.runners,CR100BuildDroids,0,77,0,2,0,19,0,5,0,4
+Planets Game Exam,com.drpicox.game.runners,CR600ProduceFuel,0,31,0,2,0,10,0,4,0,3
+Planets Game Exam,com.drpicox.game.runners,CommandRunnerCollector,2,38,1,3,0,10,1,4,0,3
+Planets Game Exam,com.drpicox.game.runners,CommandRunnerController,0,18,0,0,0,6,0,3,0,3
+Planets Game Exam,com.drpicox.game.rest,GlobalRestControllerExceptionHandler,0,9,0,0,0,2,0,2,0,2
+Planets Game Exam,com.drpicox.game.rest,GlobalRestControllerExceptionHandler.new HashMap() {...},0,16,0,0,0,3,0,1,0,1
+Planets Game Exam,com.drpicox.game.rest,GlobalRestException,0,4,0,0,0,2,0,1,0,1
+Planets Game Exam,com.drpicox.game.stars,StarController,0,133,0,6,0,36,0,17,0,14
+Planets Game Exam,com.drpicox.game.stars,Star,0,188,0,10,0,44,0,20,0,15
+Planets Game Exam,com.drpicox.game.rest.blog,BlogRestController,0,22,0,0,0,7,0,3,0,3
+Planets Game Exam,com.drpicox.game.rest.blog,PostListResponse,0,11,0,0,0,4,0,2,0,2
+Planets Game Exam,com.drpicox.game.rest.blog,PostListResponse.new LinkedHashMap() {...},0,13,0,0,0,3,0,1,0,1
+Planets Game Exam,com.drpicox.game.commands,Command.new LinkedHashMap() {...},0,28,0,0,0,5,0,1,0,1
+Planets Game Exam,com.drpicox.game.commands,Command,0,35,0,0,0,12,0,7,0,7
+Planets Game Exam,com.drpicox.game.commands,CommandController,0,42,0,0,0,12,0,6,0,6
+Planets Game Exam,com.drpicox.game.commands,CommandId,0,3,0,0,0,1,0,1,0,1
+Planets Game Exam,com.drpicox.game.maps,Map,0,56,0,0,0,15,0,8,0,8
+Planets Game Exam,com.drpicox.game.maps,MapController,0,63,0,0,0,19,0,8,0,8
+Planets Game Exam,com.drpicox.game.maps,Map.new LinkedHashMap() {...},0,46,0,0,0,7,0,2,0,2
+Planets Game Exam,com.drpicox.game.messages,Message,0,20,0,0,0,7,0,3,0,3
+Planets Game Exam,com.drpicox.game.messages,MessageController,0,34,0,0,0,11,0,5,0,5
+Planets Game Exam,com.drpicox.game.messages,Message.new LinkedHashMap() {...},0,35,0,2,0,5,0,2,0,1
+Planets Game Exam,com.drpicox.game.starbases,Starbase,0,67,0,0,0,17,0,9,0,9
+Planets Game Exam,com.drpicox.game.starbases,StarbaseController,0,37,0,0,0,12,0,5,0,5
+Planets Game Exam,com.drpicox.game.players,Player,0,41,0,2,0,11,0,7,0,6
+Planets Game Exam,com.drpicox.game.players,PlayerController,0,31,0,0,0,9,0,4,0,4
+Planets Game Exam,com.drpicox.game.players,Race,0,66,0,0,0,12,0,5,0,5
+Planets Game Exam,com.drpicox.game.entities,Entity.new LinkedHashMap() {...},0,47,0,2,0,7,0,2,0,1
+Planets Game Exam,com.drpicox.game.entities,Coordinates,0,65,0,4,0,11,0,7,0,4
+Planets Game Exam,com.drpicox.game.entities,Entity,0,63,0,2,0,21,0,14,0,13
+Planets Game Exam,com.drpicox.game.entities,Coordinates.new LinkedHashMap() {...},0,22,0,0,0,4,0,1,0,1
+Planets Game Exam,com.drpicox.game.entities,EntityController,0,37,0,0,0,11,0,6,0,6
+Planets Game Exam,com.drpicox.game.ships,Ship,0,105,0,2,0,24,0,11,0,10
+Planets Game Exam,com.drpicox.game.ships,ShipController,0,50,0,0,0,15,0,6,0,6
+Planets Game Exam,com.drpicox.game.rest.game,GameRestController,0,41,0,2,0,13,0,3,0,2
+Planets Game Exam,com.drpicox.game.rest.players,PlayerRestController,0,140,0,4,0,37,0,8,0,6
+Planets Game Exam,com.drpicox.game.rest.players,CommandForm,0,24,0,0,0,10,0,7,0,7

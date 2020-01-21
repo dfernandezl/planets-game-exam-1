@@ -1,0 +1,1730 @@
+{
+  "create": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [
+          {
+            "race": "Human",
+            "playerId": "sisko"
+          },
+          {
+            "race": "Droid",
+            "playerId": "seven"
+          }
+        ],
+        "mapCode": "TwoStars"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Defiant",
+            "entityId": 86,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "seven1": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": [
+        {
+          "value": "Defiant",
+          "entityId": 86,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "seven",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Marauder",
+            "entityId": 87,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "seven"
+      }
+    }
+  },
+  "seven2": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": [
+        {
+          "value": "Marauder",
+          "entityId": 87,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 3,
+            "mineralsReserve": 97
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "seven",
+            "text": "Created the Marauder ship",
+            "coordinates": {
+              "row": 3,
+              "column": 4
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 2,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "60",
+            "entityId": 90,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "seven"
+      }
+    }
+  },
+  "sisko2": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/seven/next",
+      "body": [
+        {
+          "value": "60",
+          "entityId": 90,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 3,
+            "mineralsReserve": 97
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 88,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Defiant ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 2,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "60",
+            "entityId": 88,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "sisko3": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "60",
+          "entityId": 88,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 40,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 95
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 88,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 3,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "seven3": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 40,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 95
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 3,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "seven4": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 40,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 93
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "sisko4": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/seven/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 44,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 93
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 88,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "seven4a": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 40,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 93
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "43",
+            "entityId": 90,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "seven"
+      }
+    }
+  },
+  "seven5": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": [
+        {
+          "value": "43",
+          "entityId": 90,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 0,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 93
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "seven",
+            "text": "Loaded 40 of 43 to the Marauder ship",
+            "coordinates": {
+              "row": 3,
+              "column": 4
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 5,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "3",
+            "entityId": 87,
+            "type": "BuildDroids"
+          }
+        ],
+        "playerId": "seven"
+      }
+    }
+  },
+  "seven6": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": [
+        {
+          "value": "3",
+          "entityId": 87,
+          "type": "BuildDroids"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 3,
+            "maxPopulation": 100,
+            "minerals": 6,
+            "mineralsReserve": 93
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 6,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "10",
+            "entityId": 87,
+            "type": "BuildDroids"
+          }
+        ],
+        "playerId": "seven"
+      }
+    }
+  },
+  "seven7": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": [
+        {
+          "value": "10",
+          "entityId": 87,
+          "type": "BuildDroids"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 13,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 92
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 7,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "999",
+            "entityId": 87,
+            "type": "BuildDroids"
+          }
+        ],
+        "playerId": "seven"
+      }
+    }
+  },
+  "seven8": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": [
+        {
+          "value": "999",
+          "entityId": 87,
+          "type": "BuildDroids"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 1,
+            "mineralsReserve": 91
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 8,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_9": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 2,
+            "mineralsReserve": 90
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 9,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_10": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 3,
+            "mineralsReserve": 89
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 10,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_11": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 4,
+            "mineralsReserve": 88
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 11,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_12": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 87
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 12,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_13": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 6,
+            "mineralsReserve": 86
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 13,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_14": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 85
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 14,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_15": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 8,
+            "mineralsReserve": 84
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 15,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_16": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 9,
+            "mineralsReserve": 83
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 16,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_17": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 10,
+            "mineralsReserve": 82
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 17,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_18": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 11,
+            "mineralsReserve": 81
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 18,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_19": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 12,
+            "mineralsReserve": 80
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 19,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "skipping_8:20_20": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 38,
+            "maxPopulation": 100,
+            "minerals": 13,
+            "mineralsReserve": 79
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 20,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [
+          {
+            "value": "999",
+            "entityId": 87,
+            "type": "BuildDroids"
+          }
+        ],
+        "playerId": "seven"
+      }
+    }
+  },
+  "seven21": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/seven/compile",
+      "body": [
+        {
+          "value": "999",
+          "entityId": 87,
+          "type": "BuildDroids"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 3,
+            "mineralsReserve": 76
+          },
+          {
+            "id": 90,
+            "type": "ship",
+            "name": "Marauder",
+            "row": 3,
+            "column": 4,
+            "playerId": "seven",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 21,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "human21": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/seven/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 86,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 50,
+            "mineralsReserve": 50
+          },
+          {
+            "id": 87,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 88,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 21,
+          "players": [
+            "sisko",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  }
+}

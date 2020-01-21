@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CR200RefuelShips.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Planets Game Exam</a> &gt; <a href="index.source.html" class="el_package">com.drpicox.game.runners</a> &gt; <span class="el_source">CR200RefuelShips.java</span></div><h1>CR200RefuelShips.java</h1><pre class="source lang-java linenums">package com.drpicox.game.runners;
+
+import com.drpicox.game.commands.CommandController;
+import com.drpicox.game.entities.Coordinates;
+import com.drpicox.game.messages.MessageController;
+import com.drpicox.game.ships.Ship;
+import com.drpicox.game.ships.ShipController;
+import com.drpicox.game.starbases.Starbase;
+import com.drpicox.game.starbases.StarbaseController;
+import com.drpicox.game.stars.Star;
+import com.drpicox.game.stars.StarController;
+import org.springframework.stereotype.Component;
+
+import static java.lang.Math.min;
+
+@Component
+public class CR200RefuelShips implements CommandRunner {
+
+    private CommandController commandController;
+    private ShipController shipController;
+    private StarbaseController starbaseController;
+
+<span class="fc" id="L23">    public CR200RefuelShips(CommandController commandController, ShipController shipController, StarbaseController starbaseController) {</span>
+<span class="fc" id="L24">        this.commandController = commandController;</span>
+<span class="fc" id="L25">        this.shipController = shipController;</span>
+<span class="fc" id="L26">        this.starbaseController = starbaseController;</span>
+<span class="fc" id="L27">    }</span>
+
+    @Override
+    public int getPriority() {
+<span class="fc" id="L31">        return 200;</span>
+    }
+
+    @Override
+    public void run() {
+<span class="fc" id="L36">        var starbases = starbaseController.listAll();</span>
+
+<span class="fc" id="L38">        starbases.forEach(this::refillStarbaseShips);</span>
+<span class="fc" id="L39">    }</span>
+
+    private void refillStarbaseShips(Starbase starbase) {
+<span class="fc" id="L42">        var coordinates = starbase.getCoordinates();</span>
+<span class="fc" id="L43">        var ships = shipController.listAllByCoordinates(coordinates);</span>
+
+<span class="fc" id="L45">        ships.stream()</span>
+<span class="fc" id="L46">                .filter(ship -&gt; ship.getPlayer().equals(starbase.getPlayer()))</span>
+<span class="fc" id="L47">                .forEach(ship -&gt; refuelShip(ship, starbase));</span>
+<span class="fc" id="L48">    }</span>
+
+    private void refuelShip(Ship ship, Starbase starbase) {
+<span class="fc" id="L51">        var limitShip = ship.getMissingFuel();</span>
+<span class="fc" id="L52">        var limitStarbase = starbase.getFuel();</span>
+
+<span class="fc" id="L54">        var amount = min(limitShip, limitStarbase);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (amount &gt; 0) {</span>
+<span class="fc" id="L56">            starbaseController.consumeFuel(starbase, amount);</span>
+<span class="fc" id="L57">            shipController.refuel(ship, amount);</span>
+        }
+<span class="fc" id="L59">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

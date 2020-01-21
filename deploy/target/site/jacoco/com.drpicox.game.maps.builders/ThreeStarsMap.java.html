@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ThreeStarsMap.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Planets Game Exam</a> &gt; <a href="index.source.html" class="el_package">com.drpicox.game.maps.builders</a> &gt; <span class="el_source">ThreeStarsMap.java</span></div><h1>ThreeStarsMap.java</h1><pre class="source lang-java linenums">package com.drpicox.game.maps.builders;
+
+import com.drpicox.game.entities.Coordinates;
+import com.drpicox.game.maps.Map;
+import com.drpicox.game.stars.StarController;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ThreeStarsMap implements MapBuilder {
+
+    private StarController starController;
+
+<span class="fc" id="L13">    public ThreeStarsMap(StarController starController) {</span>
+<span class="fc" id="L14">        this.starController = starController;</span>
+<span class="fc" id="L15">    }</span>
+
+    @Override
+    public String getName() {
+<span class="fc" id="L19">        return &quot;ThreeStars&quot;;</span>
+    }
+
+    @Override
+    public void build(MapConfiguration mapConfiguration, Map map) {
+<span class="fc" id="L24">        starController.createHomeworld(&quot;Bajor&quot;, new Coordinates(3, 3));</span>
+<span class="fc" id="L25">        starController.createHomeworld(&quot;Cardassia&quot;, new Coordinates(3, 4));</span>
+<span class="fc" id="L26">        starController.createStar(&quot;Earth&quot;, new Coordinates(4, 3));</span>
+<span class="fc" id="L27">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

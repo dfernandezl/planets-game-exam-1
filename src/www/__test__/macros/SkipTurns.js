@@ -1,6 +1,6 @@
 const SKIP = /\s+.*skip\s+turns\s+from\s+_(\d+)_\s+to\s+_(\d+)_/i;
 
-export default class LinkMacro {
+export class SkipTurns {
   constructor(regExp) {
     this._regExp = regExp;
   }

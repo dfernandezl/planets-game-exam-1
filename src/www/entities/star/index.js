@@ -1,12 +1,11 @@
-import StarCommand from "./StarCommand";
-import StarDescription from "./StarDescription";
+import { StarCommand, StarDescription } from "./private";
 
 const priority = 1;
 const type = "star";
 
-export {
+export const starDescriptor = {
   priority,
   type,
-  StarCommand as Command,
-  StarDescription as Description,
+  Command: StarCommand,
+  Description: StarDescription,
 };

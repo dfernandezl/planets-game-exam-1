@@ -1,7 +1,7 @@
-import { SET_POST } from "../actions/setPost";
-import reduceSetPost from "./reduceSetPost";
+import { SET_POST } from "../actions";
+import { reduceSetPost } from "./private";
 
-function reduceBlog(state = {}, action) {
+export function reduceBlog(state = {}, action) {
   switch (action.type) {
     case SET_POST:
       return reduceSetPost(state, action);
@@ -9,5 +9,3 @@ function reduceBlog(state = {}, action) {
       return state;
   }
 }
-
-export default reduceBlog;

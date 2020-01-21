@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Coordinates.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Planets Game Exam</a> &gt; <a href="index.source.html" class="el_package">com.drpicox.game.entities</a> &gt; <span class="el_source">Coordinates.java</span></div><h1>Coordinates.java</h1><pre class="source lang-java linenums">package com.drpicox.game.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+@Embeddable
+public class Coordinates implements Serializable {
+    @Column(name = &quot;aRow&quot;)
+    private int row;
+    @Column(name = &quot;aColumn&quot;)
+    private int column;
+
+<span class="fc" id="L16">    public Coordinates(int row, int column) {</span>
+<span class="fc" id="L17">        this.row = row;</span>
+<span class="fc" id="L18">        this.column = column;</span>
+<span class="fc" id="L19">    }</span>
+<span class="fc" id="L20">    public Coordinates() {}</span>
+
+    public Map&lt;String, Object&gt; getJson() {
+<span class="fc" id="L23">        return new LinkedHashMap&lt;&gt;() {{</span>
+<span class="fc" id="L24">            put(&quot;row&quot;, row);</span>
+<span class="fc" id="L25">            put(&quot;column&quot;, column);</span>
+<span class="fc" id="L26">        }};</span>
+    }
+
+    public Coordinates move(String direction) {
+<span class="fc bfc" id="L30" title="All 4 branches covered.">        switch (direction) {</span>
+<span class="fc" id="L31">            case &quot;down&quot;: return new Coordinates(row + 1, column);</span>
+<span class="fc" id="L32">            case &quot;up&quot;: return new Coordinates(row - 1, column);</span>
+<span class="fc" id="L33">            case &quot;left&quot;: return new Coordinates(row, column - 1);</span>
+<span class="fc" id="L34">            /*case &quot;right&quot;:*/ default: return new Coordinates(row, column + 1);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

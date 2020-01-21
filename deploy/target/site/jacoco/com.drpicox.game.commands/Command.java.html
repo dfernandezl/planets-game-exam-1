@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Command.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Planets Game Exam</a> &gt; <a href="index.source.html" class="el_package">com.drpicox.game.commands</a> &gt; <span class="el_source">Command.java</span></div><h1>Command.java</h1><pre class="source lang-java linenums">package com.drpicox.game.commands;
+
+import com.drpicox.game.entities.Entity;
+import com.drpicox.game.players.Player;
+
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.ManyToOne;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+@javax.persistence.Entity
+@IdClass(CommandId.class)
+public class Command {
+
+    @Id
+    @ManyToOne
+    private Player player;
+    @Id
+    @ManyToOne
+    private Entity entity;
+    @Id
+    private String type;
+    private String value;
+
+<span class="fc" id="L26">    public Command(Player player, Entity entity, String type, String value) {</span>
+<span class="fc" id="L27">        this.player = player;</span>
+<span class="fc" id="L28">        this.entity = entity;</span>
+<span class="fc" id="L29">        this.type = type;</span>
+<span class="fc" id="L30">        this.value = value;</span>
+<span class="fc" id="L31">    }</span>
+<span class="fc" id="L32">    public Command() {} // JPA constructor</span>
+
+    public Player getPlayer() {
+<span class="fc" id="L35">        return player;</span>
+    }
+
+    public&lt;T extends Entity&gt; T getEntity() {
+<span class="fc" id="L39">        return (T) entity;</span>
+    }
+
+    public String getType() {
+<span class="fc" id="L43">        return type;</span>
+    }
+
+    public String getValue() {
+<span class="fc" id="L47">        return value;</span>
+    }
+
+    public Map&lt;String, Object&gt; getJson() {
+<span class="fc" id="L51">        return new LinkedHashMap&lt;&gt;() {{</span>
+<span class="fc" id="L52">            put(&quot;entityId&quot;, entity.getId());</span>
+<span class="fc" id="L53">            put(&quot;type&quot;, type);</span>
+<span class="fc" id="L54">            put(&quot;value&quot;, value);</span>
+<span class="fc" id="L55">        }};</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

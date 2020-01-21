@@ -2,7 +2,8 @@ import chalk from "chalk";
 import { configure } from "@testing-library/dom";
 import prettyFormat from "pretty-format";
 import api from "../../lib/api";
-import AbstractRegExpMacro from "./AbstractRegExpMacro";
+import { AbstractRegExpMacro } from "./";
+jest.mock("../../lib/api");
 
 // one second should be more than enough for any findBy*
 // if you think that you require more time, look this first:
@@ -11,7 +12,7 @@ configure({ asyncUtilTimeout: 1000 });
 
 const highlight = chalk.bgYellowBright.black.bold;
 
-export default class PauseMatcherMacro extends AbstractRegExpMacro {
+export class SnapshotMacro extends AbstractRegExpMacro {
   constructor() {
     super(/\s*<!--\s+SNAPSHOT\s+([^\s]+)\s+status=\d+\s+-+->/);
   }

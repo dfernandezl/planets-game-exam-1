@@ -24,7 +24,7 @@ public class AllMatchers {
                 .collect(Collectors.toList());
 
         var candidates = preCandidates.stream()
-                .filter(mr -> mr.getInstructionMatcher().getPrecondition().test(context))
+                .filter(mr -> mr.getInstructionMatcher().verifyContext(context))
                 .collect(Collectors.toList());
 
         if (candidates.size() == 0) {
@@ -35,7 +35,11 @@ public class AllMatchers {
                 message.append("  context  : ").append(context.keys()).append("\n");
                 preCandidates.stream()
                         .map(mr -> mr.getInstructionMatcher())
-                        .forEach(im -> message.append("  candidate: ").append(im.getClass().getName()).append("\n"));
+                        .forEach(im -> {
+                            message.append("  candidate                        : ").append(im.getClass().getName()).append("\n");
+                            message.append("  ^ requires present in context    : ").append(im.getRequirements()).append("\n");
+                            message.append("  ^ requires not present in context: ").append(im.getExclusions()).append("\n");
+                        });
             }
             throw new Error(message.toString());
         }

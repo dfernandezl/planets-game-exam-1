@@ -14,11 +14,9 @@ function freezeState(state) {
   return state;
 }
 
-function freezeReducer(reduce) {
+export function freezeReducer(reduce) {
   return function(state, action) {
     const nextState = reduce(state, action);
     return freezeState(nextState);
   };
 }
-
-export default freezeReducer;

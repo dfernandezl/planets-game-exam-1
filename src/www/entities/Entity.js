@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { getDescriptor } from "./descriptors";
-import useSelect from "../lib/useSelect";
-import getPlayerId from "../ducks/game/selectors/getPlayerId";
+import { useSelect } from "../lib";
+import { getPlayerId } from "../ducks";
+import { getDescriptor } from "./";
 
-export default function Entity({ entity }) {
+export function Entity({ entity }) {
   const { name, type, playerId } = entity;
   const { Description, Command } = getDescriptor(entity);
   const currentPlayerId = useSelect(getPlayerId);

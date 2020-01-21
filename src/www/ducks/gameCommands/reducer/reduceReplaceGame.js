@@ -1,7 +1,6 @@
-import groupBy from "../../../lib/groupBy";
-import indexBy from "../../../lib/indexBy";
+import { groupBy, indexBy } from "../../../lib";
 
-export default function reduceReplaceGame(state, action) {
+export function reduceReplaceGame(state, action) {
   const { game } = action;
   const commands = game.commands;
 

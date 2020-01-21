@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import makeApp from "./makeApp";
+import { makeApp } from "./makeApp";
 
 const App = makeApp();
 it("renders without crashing", () => {

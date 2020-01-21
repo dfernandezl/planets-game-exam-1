@@ -1,13 +1,9 @@
 import React, { useEffect } from "react";
-import { Container, Breadcrumb, Card } from "react-bootstrap";
+import { Container, Breadcrumb, Card, Button } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import { css } from "emotion";
-import useSelect from "../../lib/useSelect";
-import getPost from "../../ducks/blog/selectors/getPost";
-import useDispatch from "../../lib/useDispatch";
-import { setView } from "../../ducks/view/actions/setView";
-import LinkButton from "../../components/LinkButton";
-import { fetchPost } from "../../ducks/blog/actions/fetchPost";
+import { useDispatch, useSelect } from "../../lib";
+import { getPost, setView, fetchPost } from "../../ducks";
 
 const postClassName = css`
   background: #ddd;
@@ -71,14 +67,18 @@ const postClassName = css`
   }
 `;
 
-function ShowPost({ postId }) {
+export function ShowPost({ postId }) {
   const post = useSelect(getPost, { postId });
   const goHome = useDispatch(setView, { root: "Home" });
   const goBlog = useDispatch(setView, { postId: null });
   const refresh = useDispatch(fetchPost, postId);
   useEffect(refresh, []);
 
-  const backToPosts = <LinkButton onClick={goBlog}>« Back to posts</LinkButton>;
+  const backToPosts = (
+    <Button variant="link" onClick={goBlog}>
+      « Back to posts
+    </Button>
+  );
 
   return (
     <Container>
@@ -95,5 +95,3 @@ function ShowPost({ postId }) {
     </Container>
   );
 }
-
-export default ShowPost;

@@ -1,9 +1,7 @@
-import { DELETE_ALERT } from "../actions/deleteAlert";
-import reduceDeleteAlert from "./reduceDeleteAlert";
-import { REPLACE_ALERT } from "../actions/replaceAlert";
-import reduceReplaceAlert from "./reduceReplaceAlert";
+import { DELETE_ALERT, REPLACE_ALERT } from "../";
+import { reduceDeleteAlert, reduceReplaceAlert } from "./private";
 
-function reduceAlert(state = null, action) {
+export function reduceAlert(state = null, action) {
   switch (action.type) {
     case DELETE_ALERT:
       return reduceDeleteAlert(state, action);
@@ -13,5 +11,3 @@ function reduceAlert(state = null, action) {
       return state;
   }
 }
-
-export default reduceAlert;

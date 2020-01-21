@@ -1,3 +1,3 @@
-export default function getGame(state) {
+export function getGame(state) {
   return state.game;
 }

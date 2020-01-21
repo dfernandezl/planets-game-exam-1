@@ -1,4 +1,4 @@
-function indexBy(array, keyOrFn = "id") {
+export function indexBy(array, keyOrFn = "id") {
   const keyFn = typeof keyOrFn === "string" ? o => o[keyOrFn] : keyOrFn;
   const result = {};
   array.forEach(o => {
@@ -7,5 +7,3 @@ function indexBy(array, keyOrFn = "id") {
   });
   return result;
 }
-
-export default indexBy;

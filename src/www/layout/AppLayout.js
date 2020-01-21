@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "./Header";
-import Version from "./Version";
-import Alert from "../ducks/alert/components/Alert";
+import { Alert } from "../ducks";
+import { Header, Version } from "./";
 
-function AppLayout({ children }) {
+export function AppLayout({ children }) {
   return (
     <>
       <Version />
@@ -13,5 +12,3 @@ function AppLayout({ children }) {
     </>
   );
 }
-
-export default AppLayout;

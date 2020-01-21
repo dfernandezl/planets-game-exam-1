@@ -1,0 +1,253 @@
+{
+  "newUniverse": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [],
+        "mapCode": "TwoStars"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "success"
+      }
+    }
+  },
+  "loginGame": {
+    "request": {
+      "method": "GET",
+      "url": "/api/v1/players/yours",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 7,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "yours",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 8,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "yours"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Defiant",
+            "entityId": 7,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "yours"
+      }
+    }
+  },
+  "save": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/yours/commands",
+      "body": [
+        {
+          "value": "Defiant",
+          "entityId": 7,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 7,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "yours",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 8,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "yours"
+          ]
+        },
+        "commands": [
+          {
+            "entityId": 7,
+            "type": "BuildShip",
+            "value": "Defiant"
+          }
+        ],
+        "playerId": "yours"
+      }
+    }
+  },
+  "recoverSaved": {
+    "request": {
+      "method": "GET",
+      "url": "/api/v1/players/yours",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 7,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "yours",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 8,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "yours"
+          ]
+        },
+        "commands": [
+          {
+            "entityId": 7,
+            "type": "BuildShip",
+            "value": "Defiant"
+          }
+        ],
+        "playerId": "yours"
+      }
+    }
+  },
+  "compile": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/yours/compile",
+      "body": [
+        {
+          "entityId": 7,
+          "type": "BuildShip",
+          "value": "Defiant"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 7,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "yours",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 3,
+            "mineralsReserve": 97
+          },
+          {
+            "id": 8,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 9,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "yours",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "yours",
+            "text": "Created the Defiant ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 2,
+          "players": [
+            "yours"
+          ]
+        },
+        "commands": [],
+        "playerId": "yours"
+      }
+    }
+  }
+}

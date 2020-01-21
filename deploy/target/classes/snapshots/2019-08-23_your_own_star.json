@@ -1,0 +1,111 @@
+{
+  "newUniverse": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [],
+        "mapCode": "TwoStars"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "success"
+      }
+    }
+  },
+  "loginYours": {
+    "request": {
+      "method": "GET",
+      "url": "/api/v1/players/yours",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 32,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "yours",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 33,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "yours"
+          ]
+        },
+        "commands": [],
+        "playerId": "yours"
+      }
+    }
+  },
+  "loginGarak": {
+    "request": {
+      "method": "GET",
+      "url": "/api/v1/players/garak",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 32,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 33,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "yours",
+            "garak"
+          ]
+        },
+        "commands": [],
+        "playerId": "garak"
+      }
+    }
+  }
+}

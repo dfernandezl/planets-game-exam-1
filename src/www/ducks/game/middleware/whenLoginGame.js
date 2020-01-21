@@ -1,6 +1,6 @@
-import fetchGame from "../actions/fetchGame";
+import { fetchGame } from "../actions";
 
-export default async function whenLoginGame(store, action) {
+export async function whenLoginGame(store, action) {
   const { playerId } = action;
   store.dispatch(fetchGame(playerId));
 }

@@ -1,12 +1,10 @@
 import React from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
-import useDispatch from "../lib/useDispatch";
-import { setView } from "../ducks/view/actions/setView";
-import useSelect from "../lib/useSelect";
-import hasPlayer from "../ducks/game/selectors/hasPlayer";
+import { useDispatch, useSelect } from "../lib";
+import { setView, hasPlayer } from "../ducks";
 
-function Header() {
+export function Header() {
   const goHome = useDispatch(setView, { root: "Home" });
   const goPlay = useDispatch(setView, { root: "Play" });
   const goNew = useDispatch(setView, { root: "New" });

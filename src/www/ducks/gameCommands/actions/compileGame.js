@@ -1,5 +1,5 @@
 export const COMPILE_GAME = "game/COMPILE";
-export default function compileGame() {
+export function compileGame() {
   return {
     type: COMPILE_GAME,
   };

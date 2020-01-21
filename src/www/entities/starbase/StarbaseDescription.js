@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-export default function StarbaseDescription({ entity }) {
+export function StarbaseDescription({ entity }) {
   const { name, playerId, fuel, maxFuel } = entity;
 
   return (

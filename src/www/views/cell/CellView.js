@@ -1,12 +1,9 @@
 import React, { useMemo } from "react";
-import useSelect from "../../lib/useSelect";
-import getView from "../../ducks/view/selectors/getView";
-import useDispatch from "../../lib/useDispatch";
-import { setView } from "../../ducks/view/actions/setView";
-import listEntitiesAtCoordinate from "../../ducks/game/selectors/listEntitiesAtCoordinate";
-import Entities from "../../entities/Entities";
+import { useDispatch, useSelect } from "../../lib";
+import { setView, getView, listEntitiesAtCoordinate } from "../../ducks";
+import { Entities } from "../../entities";
 
-export default function CellView() {
+export function CellView() {
   const onBack = useDispatch(setView, { coordinates: null });
   const coordinates = useSelect(getView, "coordinates");
   const entities = useSelect(listEntitiesAtCoordinate, coordinates);

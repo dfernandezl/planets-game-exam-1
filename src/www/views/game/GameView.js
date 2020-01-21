@@ -1,13 +1,14 @@
 import React from "react";
 import { Button, Container } from "react-bootstrap";
-import useSelect from "../../lib/useSelect";
-import getPlayerId from "../../ducks/game/selectors/getPlayerId";
-import useDispatch from "../../lib/useDispatch";
-import { saveCommands } from "../../ducks/gameCommands/actions/saveCommands";
-import logoutGame from "../../ducks/game/actions/logoutGame";
-import compileGame from "../../ducks/gameCommands/actions/compileGame";
+import { useDispatch, useSelect } from "../../lib";
+import {
+  getPlayerId,
+  saveCommands,
+  logoutGame,
+  compileGame,
+} from "../../ducks";
 
-export default function GameView() {
+export function GameView() {
   const playerId = useSelect(getPlayerId);
   const onSave = useDispatch(saveCommands);
   const onCompile = useDispatch(compileGame);

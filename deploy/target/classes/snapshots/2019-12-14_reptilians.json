@@ -1,0 +1,1080 @@
+{
+  "create": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [
+          {
+            "race": "Human",
+            "playerId": "sisko"
+          },
+          {
+            "race": "Reptilian",
+            "playerId": "garak"
+          }
+        ],
+        "mapCode": "TwoStars"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Defiant",
+            "entityId": 121,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "garak1": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": [
+        {
+          "value": "Defiant",
+          "entityId": 121,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "garak",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Ravinok",
+            "entityId": 122,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "garak"
+      }
+    }
+  },
+  "garak2": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/garak/compile",
+      "body": [
+        {
+          "value": "Ravinok",
+          "entityId": 122,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 2,
+            "mineralsReserve": 98
+          },
+          {
+            "id": 125,
+            "type": "ship",
+            "name": "Ravinok",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "garak",
+            "text": "Created the Ravinok ship",
+            "coordinates": {
+              "row": 3,
+              "column": 4
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 2,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [
+          {
+            "value": "60",
+            "entityId": 125,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "garak"
+      }
+    }
+  },
+  "sisko2": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/garak/next",
+      "body": [
+        {
+          "value": "60",
+          "entityId": 125,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 3,
+            "mineralsReserve": 97
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Defiant ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 2,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [
+          {
+            "value": "60",
+            "entityId": 123,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "sisko3": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "60",
+          "entityId": 123,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 40,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 95
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 3,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "garak3": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 40,
+            "maxPopulation": 100,
+            "minerals": 3,
+            "mineralsReserve": 97
+          },
+          {
+            "id": 125,
+            "type": "ship",
+            "name": "Ravinok",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 3,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [],
+        "playerId": "garak"
+      }
+    }
+  },
+  "garak4": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/garak/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 42,
+            "maxPopulation": 100,
+            "minerals": 4,
+            "mineralsReserve": 96
+          },
+          {
+            "id": 125,
+            "type": "ship",
+            "name": "Ravinok",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [],
+        "playerId": "garak"
+      }
+    }
+  },
+  "sisko4": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/garak/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 44,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 93
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "garak4a": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 42,
+            "maxPopulation": 100,
+            "minerals": 4,
+            "mineralsReserve": 96
+          },
+          {
+            "id": 125,
+            "type": "ship",
+            "name": "Ravinok",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [
+          {
+            "value": "left",
+            "entityId": 125,
+            "type": "MoveShip"
+          }
+        ],
+        "playerId": "garak"
+      }
+    }
+  },
+  "sisko4a": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/garak/next",
+      "body": [
+        {
+          "value": "left",
+          "entityId": 125,
+          "type": "MoveShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 44,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 93
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [
+          {
+            "value": "right",
+            "entityId": 123,
+            "type": "MoveShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "sisko5": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "right",
+          "entityId": 123,
+          "type": "MoveShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 48,
+            "maxPopulation": 100,
+            "minerals": 9,
+            "mineralsReserve": 91
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 44,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 95
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 4,
+            "playerId": "sisko",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 4,
+            "maxFuel": 10
+          },
+          {
+            "id": 125,
+            "type": "ship",
+            "name": "Ravinok",
+            "row": 3,
+            "column": 3,
+            "playerId": "garak"
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 5,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [
+          {
+            "value": "-60",
+            "entityId": 123,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "garak5": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": [
+        {
+          "value": "-60",
+          "entityId": 123,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 48,
+            "maxPopulation": 100,
+            "minerals": 9,
+            "mineralsReserve": 91
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 44,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 95
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 4,
+            "playerId": "sisko"
+          },
+          {
+            "id": 125,
+            "type": "ship",
+            "name": "Ravinok",
+            "row": 3,
+            "column": 3,
+            "playerId": "garak",
+            "population": 60,
+            "maxPopulation": 100,
+            "fuel": 4,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 5,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [
+          {
+            "value": "-60",
+            "entityId": 125,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "garak"
+      }
+    }
+  },
+  "garak6": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/garak/compile",
+      "body": [
+        {
+          "value": "-60",
+          "entityId": 125,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "garak",
+            "population": 34,
+            "maxPopulation": 100,
+            "minerals": 10,
+            "mineralsReserve": 90
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 16,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 95
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 4,
+            "playerId": "sisko"
+          },
+          {
+            "id": 125,
+            "type": "ship",
+            "name": "Ravinok",
+            "row": 3,
+            "column": 3,
+            "playerId": "garak",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 4,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "garak",
+            "text": "Star Bajor conquered!",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 6,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [],
+        "playerId": "garak"
+      }
+    }
+  },
+  "pettyHuman": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/garak/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 16,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 95
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 4,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 4,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Star Cardassia resisted.",
+            "coordinates": {
+              "row": 3,
+              "column": 4
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 6,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "greatReptilian": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 121,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "garak",
+            "population": 34,
+            "maxPopulation": 100,
+            "minerals": 10,
+            "mineralsReserve": 90
+          },
+          {
+            "id": 122,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4,
+            "playerId": "garak",
+            "population": 16,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 95
+          },
+          {
+            "id": 123,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 4,
+            "playerId": "sisko"
+          },
+          {
+            "id": 125,
+            "type": "ship",
+            "name": "Ravinok",
+            "row": 3,
+            "column": 3,
+            "playerId": "garak",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 4,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "garak",
+            "text": "Star Bajor conquered!",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 6,
+          "players": [
+            "sisko",
+            "garak"
+          ]
+        },
+        "commands": [],
+        "playerId": "garak"
+      }
+    }
+  }
+}

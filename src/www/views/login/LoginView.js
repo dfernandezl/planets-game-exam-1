@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import loginGame from "../../ducks/game/actions/loginGame";
-import useDispatch from "../../lib/useDispatch";
+import { useDispatch } from "../../lib";
+import { loginGame } from "../../ducks";
 
-export default function LoginView() {
+export function LoginView() {
   const [playerId, setPlayerId] = useState("");
   const onPlayerId = useCallback(ev => setPlayerId(ev.target.value), [
     setPlayerId,

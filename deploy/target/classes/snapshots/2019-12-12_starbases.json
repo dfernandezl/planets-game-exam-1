@@ -1,0 +1,1834 @@
+{
+  "create": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [
+          {
+            "race": "Human",
+            "playerId": "sisko"
+          }
+        ],
+        "mapCode": "TwoStars"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile2": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 8,
+            "mineralsReserve": 97
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 2,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile3": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 11,
+            "mineralsReserve": 94
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 3,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Deep Space 9",
+            "entityId": 94,
+            "type": "BuildStarbase"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile4": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "Deep Space 9",
+          "entityId": 94,
+          "type": "BuildStarbase"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 4,
+            "mineralsReserve": 91
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 0,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Deep Space 9 starbase",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Defiant",
+            "entityId": 96,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile5": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "Defiant",
+          "entityId": 96,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 4,
+            "mineralsReserve": 88
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Defiant ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 5,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile6": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 85
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 7,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 6,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile7": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 10,
+            "mineralsReserve": 82
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 9,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 7,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Rio Grande",
+            "entityId": 94,
+            "type": "BuildShip"
+          },
+          {
+            "value": "Ganges",
+            "entityId": 96,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile8": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "Rio Grande",
+          "entityId": 94,
+          "type": "BuildShip"
+        },
+        {
+          "value": "Ganges",
+          "entityId": 96,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 79
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 3,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Ganges ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          },
+          {
+            "playerId": "sisko",
+            "text": "Created the Rio Grande ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 8,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "BajorShip",
+            "entityId": 94,
+            "type": "BuildShip"
+          },
+          {
+            "value": "DeepShip",
+            "entityId": 96,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile9": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "BajorShip",
+          "entityId": 94,
+          "type": "BuildShip"
+        },
+        {
+          "value": "DeepShip",
+          "entityId": 96,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 76
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 8,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the DeepShip ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          },
+          {
+            "playerId": "sisko",
+            "text": "Cannot build ship BajorShip due to a lack of available minerals",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 9,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "skipping_9:12_10": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 8,
+            "mineralsReserve": 73
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 10,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "skipping_9:12_11": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 11,
+            "mineralsReserve": 70
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 7,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 11,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "skipping_9:12_12": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 14,
+            "mineralsReserve": 67
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 9,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 12,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Empok Nor",
+            "entityId": 94,
+            "type": "BuildStarbase"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile13": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "Empok Nor",
+          "entityId": 94,
+          "type": "BuildStarbase"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 7,
+            "mineralsReserve": 64
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 6,
+            "maxFuel": 10
+          },
+          {
+            "id": 107,
+            "type": "starbase",
+            "name": "Empok Nor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 0,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Empok Nor starbase",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 13,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Deep Space Station K-7",
+            "entityId": 94,
+            "type": "BuildStarbase"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile14": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "Deep Space Station K-7",
+          "entityId": 94,
+          "type": "BuildStarbase"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 10,
+            "mineralsReserve": 61
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 8,
+            "maxFuel": 10
+          },
+          {
+            "id": 107,
+            "type": "starbase",
+            "name": "Empok Nor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Cannot build starbase Deep Space Station K-7 due to a lack of available minerals",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 14,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "skipping_14:15_15": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 13,
+            "mineralsReserve": 58
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 107,
+            "type": "starbase",
+            "name": "Empok Nor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 4,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 15,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Enterprise-A",
+            "entityId": 94,
+            "type": "BuildShip"
+          },
+          {
+            "value": "Enterprise-B",
+            "entityId": 96,
+            "type": "BuildShip"
+          },
+          {
+            "value": "Enterprise-C",
+            "entityId": 107,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile16": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "Enterprise-A",
+          "entityId": 94,
+          "type": "BuildShip"
+        },
+        {
+          "value": "Enterprise-B",
+          "entityId": 96,
+          "type": "BuildShip"
+        },
+        {
+          "value": "Enterprise-C",
+          "entityId": 107,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 55
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 4,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 107,
+            "type": "starbase",
+            "name": "Empok Nor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 6,
+            "maxFuel": 10
+          },
+          {
+            "id": 110,
+            "type": "ship",
+            "name": "Enterprise-B",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          },
+          {
+            "id": 112,
+            "type": "ship",
+            "name": "Enterprise-C",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          },
+          {
+            "id": 114,
+            "type": "ship",
+            "name": "Enterprise-A",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Enterprise-B ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          },
+          {
+            "playerId": "sisko",
+            "text": "Created the Enterprise-C ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          },
+          {
+            "playerId": "sisko",
+            "text": "Created the Enterprise-A ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 16,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Lafayette-A",
+            "entityId": 96,
+            "type": "BuildShip"
+          },
+          {
+            "value": "Lafayette-B",
+            "entityId": 107,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile17": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "Lafayette-A",
+          "entityId": 96,
+          "type": "BuildShip"
+        },
+        {
+          "value": "Lafayette-B",
+          "entityId": 107,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 94,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 52
+          },
+          {
+            "id": 95,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 96,
+            "type": "starbase",
+            "name": "Deep Space 9",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 98,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 100,
+            "type": "ship",
+            "name": "Ganges",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 102,
+            "type": "ship",
+            "name": "Rio Grande",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 104,
+            "type": "ship",
+            "name": "DeepShip",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 107,
+            "type": "starbase",
+            "name": "Empok Nor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "fuel": 2,
+            "maxFuel": 10
+          },
+          {
+            "id": 110,
+            "type": "ship",
+            "name": "Enterprise-B",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 112,
+            "type": "ship",
+            "name": "Enterprise-C",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 10,
+            "maxFuel": 10
+          },
+          {
+            "id": 114,
+            "type": "ship",
+            "name": "Enterprise-A",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          },
+          {
+            "id": 116,
+            "type": "ship",
+            "name": "Lafayette-A",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Lafayette-A ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          },
+          {
+            "playerId": "sisko",
+            "text": "Cannot build ship Lafayette-B due to a lack of available minerals",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 17,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  }
+}

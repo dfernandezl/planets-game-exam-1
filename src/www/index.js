@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "bootswatch/dist/darkly/bootstrap.css";
-import makeApp from "./makeApp";
+import { makeApp } from "./makeApp";
 import * as serviceWorker from "./serviceWorker";
 
 const appCompose =

@@ -1,6 +1,6 @@
-import getGame from "./getGame";
+import { getGame } from "./getGame";
 
-export default function getMessages(state) {
+export function getMessages(state) {
   const game = getGame(state);
   return game && game.messages;
 }

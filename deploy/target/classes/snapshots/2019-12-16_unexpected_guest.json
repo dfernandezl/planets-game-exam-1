@@ -1,0 +1,401 @@
+{
+  "create": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [
+          {
+            "race": "Reptilian",
+            "playerId": "garak"
+          },
+          {
+            "race": "Droid",
+            "playerId": "seven"
+          }
+        ],
+        "mapCode": "ThreeStars"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 19,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 20,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 21,
+            "type": "star",
+            "name": "Earth",
+            "row": 4,
+            "column": 3
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "garak",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "garak",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "garak"
+      }
+    }
+  },
+  "next1": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/garak/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 19,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 20,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 21,
+            "type": "star",
+            "name": "Earth",
+            "row": 4,
+            "column": 3
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "seven",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "garak",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "next2": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/seven/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 19,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 20,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 21,
+            "type": "star",
+            "name": "Earth",
+            "row": 4,
+            "column": 3
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "garak",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "garak",
+            "seven"
+          ]
+        },
+        "commands": [],
+        "playerId": "garak"
+      }
+    }
+  },
+  "login": {
+    "request": {
+      "method": "GET",
+      "url": "/api/v1/players/sisko",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 19,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 20,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 21,
+            "type": "star",
+            "name": "Earth",
+            "row": 4,
+            "column": 3
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "garak",
+            "seven",
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "next3": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/sisko/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "reptilian",
+        "entities": [
+          {
+            "id": 19,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 20,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 21,
+            "type": "star",
+            "name": "Earth",
+            "row": 4,
+            "column": 3
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "garak",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "garak",
+            "seven",
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "garak"
+      }
+    }
+  },
+  "next4": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/garak/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "droid",
+        "entities": [
+          {
+            "id": 19,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3
+          },
+          {
+            "id": 20,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 21,
+            "type": "star",
+            "name": "Earth",
+            "row": 4,
+            "column": 3
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "seven",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "garak",
+            "seven",
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "seven"
+      }
+    }
+  },
+  "next5": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/players/seven/next",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 19,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 20,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 21,
+            "type": "star",
+            "name": "Earth",
+            "row": 4,
+            "column": 3
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "garak",
+            "seven",
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  }
+}

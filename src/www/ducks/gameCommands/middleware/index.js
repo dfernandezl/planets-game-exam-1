@@ -1,11 +1,7 @@
-import { SAVE_COMMANDS } from "../actions/saveCommands";
-import { NEXT_PLAYER } from "../actions/nextPlayer";
-import { COMPILE_GAME } from "../actions/compileGame";
-import whenCompileGame from "./whenCompileGame";
-import whenNextPlayer from "./whenNextPlayer";
-import whenSaveCommands from "./whenSaveCommands";
+import { SAVE_COMMANDS, NEXT_PLAYER, COMPILE_GAME } from "../actions";
+import { whenCompileGame, whenNextPlayer, whenSaveCommands } from "./private";
 
-export default store => next => action => {
+export const gameCommandsMiddleware = store => next => action => {
   next(action);
 
   switch (action.type) {

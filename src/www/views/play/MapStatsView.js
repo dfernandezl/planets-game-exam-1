@@ -1,14 +1,15 @@
 import React from "react";
 import { Container, Button } from "react-bootstrap";
-import useSelect from "../../lib/useSelect";
-import getPlayerId from "../../ducks/game/selectors/getPlayerId";
-import getRace from "../../ducks/game/selectors/getRace";
-import getTurnNumber from "../../ducks/game/selectors/getTurnNumber";
-import useDispatch from "../../lib/useDispatch";
-import { nextPlayer } from "../../ducks/gameCommands/actions/nextPlayer";
-import compileGame from "../../ducks/gameCommands/actions/compileGame";
+import { useDispatch, useSelect } from "../../lib";
+import {
+  getPlayerId,
+  getRace,
+  getTurnNumber,
+  nextPlayer,
+  compileGame,
+} from "../../ducks";
 
-function MapStatsView() {
+export function MapStatsView() {
   const playerId = useSelect(getPlayerId);
   const race = useSelect(getRace);
   const turnNumber = useSelect(getTurnNumber);
@@ -29,5 +30,3 @@ function MapStatsView() {
     </Container>
   );
 }
-
-export default MapStatsView;

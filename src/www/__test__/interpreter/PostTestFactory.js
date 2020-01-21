@@ -1,9 +1,8 @@
-import renderApp from "../renderApp";
-import FileInterpreter from "./FileInterpreter";
-import readResource from "./readResource";
+import { renderApp } from "../renderApp";
+import { FileInterpreter, readResource } from "./";
 jest.mock("../../lib/api");
 
-export default class PostTestFactory {
+export class PostTestFactory {
   createTests(postId) {
     const body = readResource("blog", `${postId}.md`);
     const snapshots = JSON.parse(readResource("snapshots", `${postId}.json`));

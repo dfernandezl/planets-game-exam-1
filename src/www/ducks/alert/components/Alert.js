@@ -1,11 +1,9 @@
 import React from "react";
 import { Alert as BsAlert } from "react-bootstrap";
-import useSelect from "../../../lib/useSelect";
-import getAlert from "../selectors/getAlert";
-import useDispatch from "../../../lib/useDispatch";
-import { deleteAlert } from "../actions/deleteAlert";
+import { useDispatch, useSelect } from "../../../lib";
+import { getAlert, deleteAlert } from "../";
 
-function Alert() {
+export function Alert() {
   const alert = useSelect(getAlert);
   const dismiss = useDispatch(deleteAlert);
   if (!alert) return null;
@@ -18,5 +16,3 @@ function Alert() {
     </div>
   );
 }
-
-export default Alert;

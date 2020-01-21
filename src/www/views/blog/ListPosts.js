@@ -1,13 +1,9 @@
 import React, { useEffect } from "react";
 import { Container, Breadcrumb } from "react-bootstrap";
-import listPosts from "../../ducks/blog/selectors/listPosts";
-import Link from "../../ducks/view/components/Link";
-import useDispatch from "../../lib/useDispatch";
-import { fetchPostList } from "../../ducks/blog/actions/fetchPostList";
-import useSelect from "../../lib/useSelect";
-import { setView } from "../../ducks/view/actions/setView";
+import { useDispatch, useSelect } from "../../lib";
+import { listPosts, Link, fetchPostList, setView } from "../../ducks";
 
-function ListPosts() {
+export function ListPosts() {
   const list = useSelect(listPosts);
   const goHome = useDispatch(setView, { root: "Home" });
   const refresh = useDispatch(fetchPostList);
@@ -31,5 +27,3 @@ function ListPosts() {
     </Container>
   );
 }
-
-export default ListPosts;

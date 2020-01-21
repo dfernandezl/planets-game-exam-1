@@ -19,7 +19,6 @@ public class MatcherMacro extends AbstractRegExpMatcher {
 
     @Override
     protected void interpretMatch(MatchResult match, Instruction instruction, Context context) {
-        if (context.has("matcherPaused")) return;
         allMatchers.interpretInstruction(instruction, context);
     }
 }

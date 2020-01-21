@@ -1,6 +1,6 @@
 import chalk from "chalk";
 
-export default class InstructionSequence {
+export class InstructionSequence {
   constructor(instructions) {
     this._instructions = instructions;
     this._currentIndex = 0;

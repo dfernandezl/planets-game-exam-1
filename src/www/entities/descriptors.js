@@ -1,7 +1,7 @@
-import * as star from "./star/index";
-import * as ship from "./ship/index";
-import * as starbase from "./starbase/index";
-import indexBy from "../lib/indexBy";
+import { starDescriptor as star } from "./star";
+import { shipDescriptor as ship } from "./ship";
+import { starbaseDescriptor as starbase } from "./starbase";
+import { indexBy } from "../lib";
 
 const descriptors = [
   star,
@@ -16,4 +16,4 @@ function getDescriptor(entity) {
   return descriptorsByType[entity.type];
 }
 
-export { descriptors as default, descriptorsByType, getDescriptor };
+export { descriptors, descriptorsByType, getDescriptor };

@@ -1,11 +1,9 @@
 import React, { useMemo } from "react";
-import useSelect from "../../lib/useSelect";
-import getMap from "../../ducks/game/selectors/getMap";
-import { CELL_WIDTH, CELL_HEIGHT } from "./mapConstants";
-import MapCell from "./MapCell";
-import range from "../../lib/range";
+import { useSelect, range } from "../../lib";
+import { MapCell, CELL_WIDTH, CELL_HEIGHT } from "./";
+import { getMap } from "../../ducks";
 
-export default function MapView() {
+export function MapView() {
   const map = useSelect(getMap);
 
   return useMemo(() => {

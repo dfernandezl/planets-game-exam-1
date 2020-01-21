@@ -34,17 +34,4 @@ public class SkipTurnsMacro implements Macro {
         var result = rootDecoder.decodeInstructions(lineNumber + "[skip turns from "+start+" to "+end+"]:", 1, sources);
         return result;
     }
-
-    private Function<String,String> parseReplacements(String query) {
-        Function<String,String> result = s -> s;
-        if (query == null) return result;
-
-        query = query.substring(1);
-        for (var replacement: query.split("&")) {
-            var symbol = replacement.split("=")[0];
-            var value = replacement.split("=")[1];
-            result = result.andThen(text -> text.replace(symbol, value));
-        }
-        return result;
-    }
 }

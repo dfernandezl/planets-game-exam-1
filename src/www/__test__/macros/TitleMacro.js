@@ -1,6 +1,6 @@
-import AbstractRegExpMacro from "./AbstractRegExpMacro";
+import { AbstractRegExpMacro } from "./";
 
-export default class TitleMacro extends AbstractRegExpMacro {
+export class TitleMacro extends AbstractRegExpMacro {
   constructor() {
     super(/^###+\s/);
   }

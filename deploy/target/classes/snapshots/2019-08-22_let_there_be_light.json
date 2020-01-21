@@ -1,0 +1,80 @@
+{
+  "newUniverse": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [],
+        "mapCode": "TwoStars"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "success"
+      }
+    }
+  },
+  "loginGame": {
+    "request": {
+      "method": "GET",
+      "url": "/api/v1/players/yours",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 22,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "yours",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 23,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "yours"
+          ]
+        },
+        "commands": [],
+        "playerId": "yours"
+      }
+    }
+  },
+  "wrongUniverse": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [],
+        "mapCode": "WrongUniverse"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "message": "Wrong map code, it was not found: WrongUniverse"
+      }
+    }
+  }
+}

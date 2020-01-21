@@ -1,3 +1,7 @@
-import reduceView from "./reducer/index";
+import { reduceView } from "./reducer";
 
-export { reduceView as default };
+export * from "./actions";
+export * from "./components";
+export * from "./selectors";
+
+export const viewDuck = { default: reduceView };

@@ -1,9 +1,8 @@
-import listCommands from "../selectors/listCommands";
-import getPlayerId from "../../game/selectors/getPlayerId";
 import api from "../../../lib/api";
-import replaceGame from "../../game/actions/replaceGame";
+import { getPlayerId, replaceGame } from "../../game";
+import { listCommands } from "../selectors";
 
-export default async function whenNextPlayer(store, action) {
+export async function whenNextPlayer(store, action) {
   const state = store.getState();
   const playerId = getPlayerId(state);
   const commands = listCommands(state);

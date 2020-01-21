@@ -1,13 +1,14 @@
 import React, { useMemo } from "react";
 import { css } from "emotion";
-import useSelect from "../../lib/useSelect";
-import { CELL_WIDTH, CELL_HEIGHT } from "./mapConstants";
-import listEntitiesAtCoordinate from "../../ducks/game/selectors/listEntitiesAtCoordinate";
-import getEntitiesAtCoordinateByType from "../../ducks/game/selectors/getEntitiesByCoordinatesByType";
-import getPlayerId from "../../ducks/game/selectors/getPlayerId";
-import useDispatch from "../../lib/useDispatch";
-import { setView } from "../../ducks/view/actions/setView";
-import getView from "../../ducks/view/selectors/getView";
+import { useDispatch, useSelect } from "../../lib";
+import { CELL_WIDTH, CELL_HEIGHT } from "./";
+import {
+  listEntitiesAtCoordinate,
+  getEntitiesAtCoordinateByType,
+  getPlayerId,
+  setView,
+  getView,
+} from "../../ducks";
 
 const cellClassName = css`
   width: ${CELL_WIDTH}em;
@@ -26,7 +27,7 @@ const cellClassName = css`
   }
 `;
 
-export default function MapCell({ row, column }) {
+export function MapCell({ row, column }) {
   const byType = useSelect(getEntitiesAtCoordinateByType, { row, column });
   const entities = useSelect(listEntitiesAtCoordinate, { row, column });
   const playerId = useSelect(getPlayerId);

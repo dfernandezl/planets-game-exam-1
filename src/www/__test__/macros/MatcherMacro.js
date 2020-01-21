@@ -1,7 +1,7 @@
 import AllMatchers from "../matchers/AllMatchers";
-import AbstractRegExpMacro from "./AbstractRegExpMacro";
+import { AbstractRegExpMacro } from "./";
 
-export default class MatcherMacro extends AbstractRegExpMacro {
+export class MatcherMacro extends AbstractRegExpMacro {
   constructor() {
     super(/^[\s>]+[^\s>]/);
 

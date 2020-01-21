@@ -1,10 +1,9 @@
 import React, { useCallback } from "react";
 import { Form, Card } from "react-bootstrap";
-import { useCommandValue } from "../../ducks/gameCommands/hooks/useCommandValue";
-import useSelect from "../../lib/useSelect";
-import getRace from "../../ducks/game/selectors/getRace";
+import { useSelect } from "../../lib";
+import { useCommandValue, getRace } from "../../ducks";
 
-export default function StarCommand({ entity }) {
+export function StarCommand({ entity }) {
   const race = useSelect(getRace);
 
   const [shipName, setShipName] = useCommandValue(entity.id, "BuildShip", "");

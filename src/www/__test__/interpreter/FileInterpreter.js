@@ -1,11 +1,13 @@
 import chalk from "chalk";
-import Context from "./Context";
-import FileTokenizer from "./FileTokenizer";
-import TestInterpreter from "./TestInterpreter";
-import InstructionSequence from "./InstructionSequence";
-import decodeContent from "../macros/decodeContent";
+import {
+  Context,
+  FileTokenizer,
+  TestInterpreter,
+  InstructionSequence,
+} from "./";
+import { decodeContent } from "../macros";
 
-export default class FileInterpreter {
+export class FileInterpreter {
   _befores = [];
   _afters = [];
   _rootContext = new Context();

@@ -1,5 +1,3 @@
-function reduceDeleteAlert(state, action) {
+export function reduceDeleteAlert(state, action) {
   return null;
 }
-
-export default reduceDeleteAlert;

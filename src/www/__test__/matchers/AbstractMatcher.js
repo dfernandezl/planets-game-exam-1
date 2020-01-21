@@ -1,4 +1,4 @@
-export default class AbstractMatcher {
+export class AbstractMatcher {
   constructor(regExp) {
     this._regExp = regExp;
   }
@@ -9,7 +9,7 @@ export default class AbstractMatcher {
 
   interpretMatch(match, instruction, context) {
     throw new Error(
-      `Unimplemented method ${this.constructor.name}.interpretMatch(…)`
+      `Unimplemented method ${this.constructor.name}.interpretMatch(…)`,
     );
   }
 }

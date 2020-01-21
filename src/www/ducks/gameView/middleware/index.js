@@ -1,7 +1,7 @@
 import { REPLACE_GAME } from "../../game/actions/replaceGame";
-import whenReplaceGame from "./whenReplaceGame";
+import { whenReplaceGame } from "./private";
 
-export default store => next => action => {
+export const gameViewMiddleware = store => next => action => {
   next(action);
 
   switch (action.type) {

@@ -1,11 +1,7 @@
-import { FETCH_GAME } from "../actions/fetchGame";
-import { LOGIN_GAME } from "../actions/loginGame";
-import { NEW_GAME } from "../actions/newGame";
-import whenFetchGame from "./whenFetchGame";
-import whenLoginGame from "./whenLoginGame";
-import whenNewGame from "./whenNewGame";
+import { FETCH_GAME, LOGIN_GAME, NEW_GAME } from "../actions";
+import { whenFetchGame, whenLoginGame, whenNewGame } from "./private";
 
-export default store => next => action => {
+export const gameMiddleware = store => next => action => {
   next(action);
 
   switch (action.type) {

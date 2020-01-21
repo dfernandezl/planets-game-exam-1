@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import { Form, Card } from "react-bootstrap";
-import MoveShipCommand from "./MoveShipCommand";
-import { useCommandValue } from "../../ducks/gameCommands/hooks/useCommandValue";
+import { MoveShipCommand } from "./MoveShipCommand";
+import { useCommandValue } from "../../ducks";
 
-export default function ShipCommand({ entity }) {
+export function ShipCommand({ entity }) {
   const [load, setLoad] = useCommandValue(entity.id, "LoadShip", 0);
   const onLoad = useCallback(ev => setLoad(ev.target.value), [setLoad]);
 

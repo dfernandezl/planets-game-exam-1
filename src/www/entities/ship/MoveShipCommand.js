@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import { ButtonGroup, Button, Card } from "react-bootstrap";
-import { useCommandValue } from "../../ducks/gameCommands/hooks/useCommandValue";
+import { useCommandValue } from "../../ducks";
 
-export default function ShipCommand({ entity }) {
+export function MoveShipCommand({ entity }) {
   const [direction, move] = useCommandValue(entity.id, "MoveShip");
   const moveDown = useCallback(() => move("down"), [move]);
   const moveUp = useCallback(() => move("up"), [move]);

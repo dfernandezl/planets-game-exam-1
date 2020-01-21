@@ -1,9 +1,7 @@
-import { FETCH_POST_LIST } from "../actions/fetchPostList";
-import whenFetchPostList from "./whenFetchPostList";
-import { FETCH_POST } from "../actions/fetchPost";
-import whenFetchPost from "./whenFetchPost";
+import { FETCH_POST, FETCH_POST_LIST } from "../actions";
+import { whenFetchPost, whenFetchPostList } from "./private";
 
-const blogMiddleware = state => next => async action => {
+export const blogMiddleware = state => next => async action => {
   next(action);
 
   switch (action.type) {
@@ -14,5 +12,3 @@ const blogMiddleware = state => next => async action => {
     default: // nothing
   }
 };
-
-export default blogMiddleware;

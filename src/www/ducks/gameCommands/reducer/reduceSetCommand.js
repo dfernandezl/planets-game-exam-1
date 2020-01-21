@@ -1,4 +1,4 @@
-export default function reduceSetCommand(state, action) {
+export function reduceSetCommand(state, action) {
   const { command } = action;
   const { entityId, type } = command;
   return {

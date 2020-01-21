@@ -1,4 +1,7 @@
-import middleware from "./middleware/index";
-import reducer from "./reducer/index";
+import { reduceGame } from "./reducer";
+import { gameMiddleware } from "./middleware";
 
-export { reducer as default, middleware };
+export * from "./actions";
+export * from "./selectors";
+
+export const gameDuck = { default: reduceGame, middleware: gameMiddleware };

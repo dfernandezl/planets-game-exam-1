@@ -1,6 +1,6 @@
 import { queryByTestId } from "@testing-library/dom";
-import AbstractMatcher from "./AbstractMatcher";
-import convertHumanIdIntoTestId from "./helpers/convertHumanIdIntoTestId";
+import { AbstractMatcher } from "./";
+import { convertHumanIdIntoTestId } from "./helpers";
 
 export default class extends AbstractMatcher {
   constructor() {

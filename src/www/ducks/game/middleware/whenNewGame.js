@@ -1,8 +1,8 @@
 import api from "../../../lib/api";
-import { replaceAlert } from "../../alert/actions/replaceAlert";
-import replaceGame from "../actions/replaceGame";
+import { replaceAlert } from "../../alert";
+import { replaceGame } from "../actions";
 
-export default async function whenNewGame(store, action) {
+export async function whenNewGame(store, action) {
   const { mapCode, players } = action;
   try {
     const game = await api.put("/api/v1/game", { mapCode, players });

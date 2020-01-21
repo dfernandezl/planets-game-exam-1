@@ -1,0 +1,406 @@
+{
+  "create": {
+    "request": {
+      "method": "PUT",
+      "url": "/api/v1/game",
+      "body": {
+        "players": [
+          {
+            "race": "Human",
+            "playerId": "sisko"
+          }
+        ],
+        "mapCode": "TwoStars"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 12,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 5,
+            "mineralsReserve": 100
+          },
+          {
+            "id": 13,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Welcome",
+            "coordinates": null
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 1,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "Defiant",
+            "entityId": 12,
+            "type": "BuildShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile2": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "Defiant",
+          "entityId": 12,
+          "type": "BuildShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 12,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 3,
+            "mineralsReserve": 97
+          },
+          {
+            "id": 13,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 14,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 0,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Created the Defiant ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 2,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "10",
+            "entityId": 14,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile3": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "10",
+          "entityId": 14,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 12,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 90,
+            "maxPopulation": 100,
+            "minerals": 6,
+            "mineralsReserve": 94
+          },
+          {
+            "id": 13,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 14,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 10,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 3,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile4": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 12,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 99,
+            "maxPopulation": 100,
+            "minerals": 9,
+            "mineralsReserve": 91
+          },
+          {
+            "id": 13,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 14,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 10,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 4,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile5": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": []
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 12,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "minerals": 12,
+            "mineralsReserve": 88
+          },
+          {
+            "id": 13,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 14,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 10,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 5,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [
+          {
+            "value": "100",
+            "entityId": 14,
+            "type": "LoadShip"
+          }
+        ],
+        "playerId": "sisko"
+      }
+    }
+  },
+  "compile6": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/players/sisko/compile",
+      "body": [
+        {
+          "value": "100",
+          "entityId": 14,
+          "type": "LoadShip"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "race": "human",
+        "entities": [
+          {
+            "id": 12,
+            "type": "star",
+            "name": "Bajor",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 10,
+            "maxPopulation": 100,
+            "minerals": 13,
+            "mineralsReserve": 87
+          },
+          {
+            "id": 13,
+            "type": "star",
+            "name": "Cardassia",
+            "row": 3,
+            "column": 4
+          },
+          {
+            "id": 14,
+            "type": "ship",
+            "name": "Defiant",
+            "row": 3,
+            "column": 3,
+            "playerId": "sisko",
+            "population": 100,
+            "maxPopulation": 100,
+            "fuel": 5,
+            "maxFuel": 10
+          }
+        ],
+        "messages": [
+          {
+            "playerId": "sisko",
+            "text": "Loaded 90 of 100 to the Defiant ship",
+            "coordinates": {
+              "row": 3,
+              "column": 3
+            }
+          }
+        ],
+        "map": {
+          "id": "uniq",
+          "rows": 8,
+          "columns": 8,
+          "turnNumber": 6,
+          "players": [
+            "sisko"
+          ]
+        },
+        "commands": [],
+        "playerId": "sisko"
+      }
+    }
+  }
+}

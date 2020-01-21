@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import { Form, Card } from "react-bootstrap";
-import { useCommandValue } from "../../ducks/gameCommands/hooks/useCommandValue";
+import { useCommandValue } from "../../ducks";
 
-export default function StarbaseCommand({ entity }) {
+export function StarbaseCommand({ entity }) {
   const [shipName, setShipName] = useCommandValue(entity.id, "BuildShip", "");
   const onShipName = useCallback(ev => setShipName(ev.target.value), [
     setShipName,

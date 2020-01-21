@@ -1,10 +1,10 @@
 import React from "react";
 import { Provider } from "react-redux";
-import createDucksStore from "./ducks/createDucksStore";
-import RootView from "./views/RootView";
-import AppLayout from "./layout/AppLayout";
+import { createDucksStore } from "./ducks";
+import { RootView } from "./views";
+import { AppLayout } from "./layout";
 
-export default function makeApp(preloadedState, appCompose) {
+export function makeApp(preloadedState, appCompose) {
   const store = createDucksStore(preloadedState, appCompose);
 
   function App() {

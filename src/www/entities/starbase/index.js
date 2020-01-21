@@ -1,12 +1,12 @@
-import StarbaseCommand from "./StarbaseCommand";
-import StarbaseDescription from "./StarbaseDescription";
+import { StarbaseCommand } from "./StarbaseCommand";
+import { StarbaseDescription } from "./StarbaseDescription";
 
 const priority = 1;
 const type = "starbase";
 
-export {
+export const starbaseDescriptor = {
   priority,
   type,
-  StarbaseCommand as Command,
-  StarbaseDescription as Description,
+  Command: StarbaseCommand,
+  Description: StarbaseDescription,
 };

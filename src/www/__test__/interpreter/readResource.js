@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 
-export default function readResource(folder, name) {
+export function readResource(folder, name) {
   var fullName = path.join(
     __dirname,
     "..",

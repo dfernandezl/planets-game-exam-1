@@ -1,9 +1,8 @@
-import { REPLACE_GAME } from "../../game/actions/replaceGame";
-import reduceReplaceGame from "./reduceReplaceGame";
-import { SET_COMMAND } from "../actions/setCommand";
-import reduceSetCommand from "./reduceSetCommand";
+import { REPLACE_GAME } from "../../game";
+import { SET_COMMAND } from "../actions";
+import { reduceSetCommand, reduceReplaceGame } from "./private";
 
-export default function reduceGameCommands(state = {}, action) {
+export function reduceGameCommands(state = {}, action) {
   switch (action.type) {
     case REPLACE_GAME:
       return reduceReplaceGame(state, action);

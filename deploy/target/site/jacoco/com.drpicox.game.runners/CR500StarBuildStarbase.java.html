@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CR500StarBuildStarbase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Planets Game Exam</a> &gt; <a href="index.source.html" class="el_package">com.drpicox.game.runners</a> &gt; <span class="el_source">CR500StarBuildStarbase.java</span></div><h1>CR500StarBuildStarbase.java</h1><pre class="source lang-java linenums">package com.drpicox.game.runners;
+
+import com.drpicox.game.commands.CommandController;
+import com.drpicox.game.entities.Entity;
+import com.drpicox.game.messages.MessageController;
+import com.drpicox.game.players.Player;
+import com.drpicox.game.starbases.StarbaseController;
+import com.drpicox.game.stars.StarController;
+import org.springframework.stereotype.Component;
+
+@Component
+public class CR500StarBuildStarbase implements CommandRunner {
+
+    private CommandController commandController;
+    private StarbaseController starbaseController;
+    private MessageController messageController;
+    private StarController starController;
+
+<span class="fc" id="L19">    public CR500StarBuildStarbase(CommandController commandController, StarbaseController starbaseController, MessageController messageController, StarController starController) {</span>
+<span class="fc" id="L20">        this.commandController = commandController;</span>
+<span class="fc" id="L21">        this.starbaseController = starbaseController;</span>
+<span class="fc" id="L22">        this.messageController = messageController;</span>
+<span class="fc" id="L23">        this.starController = starController;</span>
+<span class="fc" id="L24">    }</span>
+
+    @Override
+    public int getPriority() {
+<span class="fc" id="L28">        return 500;</span>
+    }
+
+    @Override
+    public void run() {
+<span class="fc" id="L33">        var commands = commandController.listAllByType(&quot;BuildStarbase&quot;);</span>
+
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (var command : commands) {</span>
+<span class="fc" id="L36">            var player = command.getPlayer();</span>
+<span class="fc" id="L37">            var entity = command.getEntity();</span>
+<span class="fc" id="L38">            var name = command.getValue();</span>
+<span class="fc" id="L39">            buildStarbase(player, entity, name);</span>
+<span class="fc" id="L40">        }</span>
+<span class="fc" id="L41">    }</span>
+
+    private void buildStarbase(Player player, Entity entity, String name) {
+<span class="fc" id="L44">        var coordinates = entity.getCoordinates();</span>
+<span class="fc" id="L45">        var star = starController.getStar(coordinates);</span>
+
+<span class="fc" id="L47">        var hasMinerals = starController.consumeMinerals(star,10);</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (hasMinerals) {</span>
+<span class="fc" id="L49">            starbaseController.createStarbase(star, name);</span>
+<span class="fc" id="L50">            messageController.sendMessage(player, &quot;Created the &quot; + name + &quot; starbase&quot;, coordinates);</span>
+        } else {
+<span class="fc" id="L52">            messageController.sendMessage(player, &quot;Cannot build starbase &quot; + name + &quot; due to a lack of available minerals&quot;, coordinates);</span>
+        }
+<span class="fc" id="L54">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

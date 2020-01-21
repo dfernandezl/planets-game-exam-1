@@ -1,5 +1,5 @@
 import escapeStringRegexp from "escape-string-regexp";
-import readResource from "../interpreter/readResource";
+import { readResource } from "../interpreter";
 
 const LINK = /\[[^\]]*\]\(\?root=Blog&postId=([^&#]+)(&[^#]+)?#(.+)\)/;
 
@@ -45,7 +45,7 @@ function replaceWithReplacements(content, replacements) {
   return content;
 }
 
-export default class LinkMacro {
+export class LinkMacro {
   constructor(regExp) {
     this._regExp = regExp;
   }

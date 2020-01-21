@@ -1,6 +1,6 @@
-import AllMacro from "../macros/AllMacro";
+import { AllMacro } from "../macros";
 
-export default class TestInterpreter {
+export class TestInterpreter {
   constructor(context) {
     this._context = context;
     this._allMacro = new AllMacro();

@@ -1,8 +1,8 @@
 import React from "react";
-import useSelect from "../../../lib/useSelect";
-import getView from "../selectors/getView";
+import { useSelect } from "../../../lib";
+import { getView } from "../selectors";
 
-function makeSubView(field, Views) {
+export function makeSubView(field, Views) {
   Views.null = Views.null || Views.undefined;
   Views.undefined = Views.undefined || Views.null;
 
@@ -18,5 +18,3 @@ function makeSubView(field, Views) {
   }
   return SubView;
 }
-
-export default makeSubView;

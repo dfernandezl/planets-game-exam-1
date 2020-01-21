@@ -11,8 +11,6 @@ import java.util.regex.MatchResult;
 @Component
 public class SnapshotMacro extends AbstractRegExpMatcher {
 
-    public static String RESPONSE_CONTEXT_NAME = "snapshotResponseName";
-
     public SnapshotMacro() {
         super("\\s*<!--\\s+SNAPSHOT\\s+([^\\s]+)\\s+status=(\\d+)\\s+-+->\\s*");
     }

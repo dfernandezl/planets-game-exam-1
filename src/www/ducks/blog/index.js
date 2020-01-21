@@ -1,4 +1,7 @@
-import reduceBlog from "./reducer/index";
-import blogMiddleware from "./middleware/index";
+import { reduceBlog } from "./reducer";
+import { blogMiddleware } from "./middleware";
 
-export { reduceBlog as default, blogMiddleware as middleware };
+export * from "./actions";
+export * from "./selectors";
+
+export const blogDuck = { default: reduceBlog, middleware: blogMiddleware };

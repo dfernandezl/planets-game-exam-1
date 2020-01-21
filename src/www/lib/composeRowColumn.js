@@ -1,5 +1,3 @@
-function composeRowColumn({ row, column }) {
+export function composeRowColumn({ row, column }) {
   return `${row}#${column}`;
 }
-
-export default composeRowColumn;

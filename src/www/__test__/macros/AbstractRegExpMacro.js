@@ -1,4 +1,4 @@
-export default class AbstractRegExpMacro {
+export class AbstractRegExpMacro {
   constructor(regExp) {
     this._regExp = regExp;
   }

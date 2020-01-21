@@ -2,7 +2,7 @@ import chalk from "chalk";
 const highlight = chalk.bgYellowBright.black.bold;
 
 let contextId = 0;
-export default class Context {
+export class Context {
   contextId = contextId++;
   set = (key, value) => {
     this[key] = value;

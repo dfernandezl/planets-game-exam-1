@@ -1,3 +1,3 @@
-export default function getCommands(state) {
+export function getCommands(state) {
   return state.gameCommands;
 }

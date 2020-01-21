@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CR200LoadShip.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Planets Game Exam</a> &gt; <a href="index.source.html" class="el_package">com.drpicox.game.runners</a> &gt; <span class="el_source">CR200LoadShip.java</span></div><h1>CR200LoadShip.java</h1><pre class="source lang-java linenums">package com.drpicox.game.runners;
+
+import com.drpicox.game.commands.CommandController;
+import com.drpicox.game.entities.Coordinates;
+import com.drpicox.game.messages.MessageController;
+import com.drpicox.game.players.Player;
+import com.drpicox.game.ships.Ship;
+import com.drpicox.game.ships.ShipController;
+import com.drpicox.game.stars.Star;
+import com.drpicox.game.stars.StarController;
+import org.springframework.stereotype.Component;
+
+import static java.lang.Math.min;
+
+@Component
+public class CR200LoadShip implements CommandRunner {
+
+    private CommandController commandController;
+    private StarController starController;
+    private ShipController shipController;
+    private MessageController messageController;
+
+<span class="fc" id="L23">    public CR200LoadShip(CommandController commandController, StarController starController, ShipController shipController, MessageController messageController) {</span>
+<span class="fc" id="L24">        this.commandController = commandController;</span>
+<span class="fc" id="L25">        this.starController = starController;</span>
+<span class="fc" id="L26">        this.shipController = shipController;</span>
+<span class="fc" id="L27">        this.messageController = messageController;</span>
+<span class="fc" id="L28">    }</span>
+
+    @Override
+    public int getPriority() {
+<span class="fc" id="L32">        return 200;</span>
+    }
+
+    @Override
+    public void run() {
+<span class="fc" id="L37">        var commands = commandController.listAllByType(&quot;LoadShip&quot;);</span>
+
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        for (var command : commands) {</span>
+<span class="fc" id="L40">            var player = command.getPlayer();</span>
+<span class="fc" id="L41">            var ship = (Ship) command.getEntity();</span>
+<span class="fc" id="L42">            var amount = Integer.parseInt(command.getValue());</span>
+<span class="fc" id="L43">            var coordinates = ship.getCoordinates();</span>
+<span class="fc" id="L44">            var star = starController.getStar(coordinates);</span>
+
+<span class="fc" id="L46">            decideAction(player, ship, amount, coordinates, star);</span>
+<span class="fc" id="L47">        }</span>
+<span class="fc" id="L48">    }</span>
+
+    private void decideAction(Player player, Ship ship, int amount, Coordinates coordinates, Star star) {
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (star == null) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            if (amount &gt; 0) messageController.sendMessage(player, &quot;Cannot load the &quot; + ship.getName() + &quot; ship from an empty space&quot;, coordinates);</span>
+<span class="fc" id="L53">            else messageController.sendMessage(player, &quot;Cannot unload the &quot; + ship.getName() + &quot; ship into an empty space&quot;, coordinates);</span>
+<span class="fc" id="L54">            return;</span>
+        }
+
+<span class="fc" id="L57">        var starPlayer = star.getPlayer();</span>
+<span class="fc bfc" id="L58" title="All 4 branches covered.">        if (starPlayer == null || !starPlayer.equals(player)) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            if (amount &gt; 0) messageController.sendMessage(player, &quot;Cannot load the &quot; + ship.getName() + &quot; ship from an alien planet&quot;, coordinates);</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">            if (amount &lt; 0) conquerStar(-amount, ship, star, coordinates);</span>
+<span class="fc" id="L61">            return;</span>
+        }
+
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (amount &gt; 0) loadShip(amount, ship, star, coordinates);</span>
+<span class="fc" id="L65">        else unloadShip(-amount, ship, star, coordinates);</span>
+<span class="fc" id="L66">    }</span>
+
+    private void loadShip(int amount, Ship ship, Star star, Coordinates coordinates) {
+<span class="fc" id="L69">        var shipLimit = ship.getMaxPopulation() - ship.getPopulation();</span>
+<span class="fc" id="L70">        var starLimit = star.getPopulation();</span>
+<span class="fc" id="L71">        var real = min(amount, min(shipLimit, starLimit));</span>
+
+<span class="fc" id="L73">        starController.extractPopulation(star, real);</span>
+<span class="fc" id="L74">        shipController.loadPopulation(ship, real);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (real != amount) messageController.sendMessage(ship.getPlayer(), &quot;Loaded &quot; + real + &quot; of &quot; + amount + &quot; to the &quot; + ship.getName() + &quot; ship&quot;, coordinates);</span>
+<span class="fc" id="L76">    }</span>
+
+    private void unloadShip(int amount, Ship ship, Star star, Coordinates coordinates) {
+<span class="fc" id="L79">        var shipLimit = ship.getPopulation();</span>
+<span class="fc" id="L80">        var starLimit = star.getMaxPopulation() - star.getPopulation();</span>
+<span class="fc" id="L81">        var real = min(amount, min(shipLimit, starLimit));</span>
+
+<span class="fc" id="L83">        starController.extractPopulation(star, -real);</span>
+<span class="fc" id="L84">        shipController.loadPopulation(ship, -real);</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if (real != amount) messageController.sendMessage(ship.getPlayer(), &quot;Unloaded &quot; + real + &quot; of &quot; + amount + &quot; from the &quot; + ship.getName() + &quot; ship&quot;, coordinates);</span>
+<span class="fc" id="L86">    }</span>
+
+    private void conquerStar(int amount, Ship ship, Star star, Coordinates coordinates) {
+<span class="fc" id="L89">        var shipLimit = ship.getPopulation();</span>
+<span class="fc" id="L90">        var starLimit = star.getMaxPopulation();</span>
+<span class="fc" id="L91">        var real = min(amount, min(shipLimit, starLimit));</span>
+
+<span class="fc" id="L93">        var shipPlayer = ship.getPlayer();</span>
+<span class="fc" id="L94">        var starPlayer = star.getPlayer();</span>
+<span class="fc" id="L95">        var shipDamage = shipPlayer.getRace().getDamage();</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        var starDamage = starPlayer != null ? starPlayer.getRace().getDamage() : 1.0;</span>
+<span class="fc" id="L97">        var shipPoints = real * shipDamage;</span>
+<span class="fc" id="L98">        var starPoints = star.getPopulation() * starDamage;</span>
+
+<span class="fc" id="L100">        var finalPoints = shipPoints - starPoints;</span>
+<span class="fc" id="L101">        shipController.loadPopulation(ship, -real);</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        if (finalPoints &gt; 0) {</span>
+<span class="fc" id="L103">            var survivors = (int) (finalPoints / shipDamage);</span>
+<span class="fc" id="L104">            starController.looseBattle(star, ship.getPlayer(), survivors);</span>
+<span class="fc" id="L105">            messageController.sendMessage(shipPlayer, &quot;Star &quot; + star.getName() + &quot; conquered!&quot;, coordinates);</span>
+<span class="fc" id="L106">        } else {</span>
+<span class="fc" id="L107">            var survivors = (int) (-finalPoints / starDamage);</span>
+<span class="fc" id="L108">            starController.winsBattle(star, survivors);</span>
+<span class="fc" id="L109">            messageController.sendMessage(shipPlayer, &quot;Star &quot; + star.getName() + &quot; resisted.&quot;, coordinates);</span>
+        }
+<span class="fc" id="L111">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

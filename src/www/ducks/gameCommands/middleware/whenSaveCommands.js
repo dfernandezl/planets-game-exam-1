@@ -1,9 +1,9 @@
-import listCommands from "../selectors/listCommands";
-import getPlayerId from "../../game/selectors/getPlayerId";
 import api from "../../../lib/api";
-import { replaceAlert } from "../../alert/actions/replaceAlert";
+import { replaceAlert } from "../../alert";
+import { getPlayerId } from "../../game";
+import { listCommands } from "../selectors";
 
-export default async function whenSaveCommands(store, action) {
+export async function whenSaveCommands(store, action) {
   const state = store.getState();
   const playerId = getPlayerId(state);
   const commands = listCommands(state);

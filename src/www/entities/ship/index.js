@@ -1,12 +1,11 @@
-import ShipCommand from "./ShipCommand";
-import ShipDescription from "./ShipDescription";
+import { ShipCommand, ShipDescription } from "./private";
 
 const priority = 5;
 const type = "ship";
 
-export {
+export const shipDescriptor = {
   priority,
   type,
-  ShipCommand as Command,
-  ShipDescription as Description,
+  Command: ShipCommand,
+  Description: ShipDescription,
 };

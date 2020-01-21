@@ -1,6 +1,6 @@
 import React from "react";
 import { css, cx } from "emotion";
-import useDispatch from "../../../lib/useDispatch";
+import { useDispatch } from "../../../lib";
 import { setView } from "../actions/setView";
 
 const linkClass = css`
@@ -11,7 +11,7 @@ const linkClass = css`
   }
 `;
 
-function Link({ children, view, className = null }) {
+export function Link({ children, view, className = null }) {
   const followLink = useDispatch(setView, view);
 
   return (
@@ -20,5 +20,3 @@ function Link({ children, view, className = null }) {
     </span>
   );
 }
-
-export default Link;

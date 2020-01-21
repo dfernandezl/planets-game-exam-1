@@ -1,9 +1,7 @@
 import React, { useMemo } from "react";
 import { ListGroup } from "react-bootstrap";
-import useSelect from "../../lib/useSelect";
-import useDispatch from "../../lib/useDispatch";
-import getMessages from "../../ducks/game/selectors/getMessages";
-import { setView } from "../../ducks/view/actions/setView";
+import { useDispatch, useSelect } from "../../lib";
+import { setView, getMessages } from "../../ducks";
 
 function Message({ message }) {
   const { coordinates, text } = message;
@@ -12,7 +10,7 @@ function Message({ message }) {
   return <ListGroup.Item onClick={go}>{text}</ListGroup.Item>;
 }
 
-export default function MessagesView() {
+export function MessagesView() {
   const messages = useSelect(getMessages);
 
   return useMemo(

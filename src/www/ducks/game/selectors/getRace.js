@@ -1,6 +1,6 @@
-import getGame from "./getGame";
+import { getGame } from "./getGame";
 
-export default function getRace(state) {
+export function getRace(state) {
   const game = getGame(state);
   return game && game.race;
 }

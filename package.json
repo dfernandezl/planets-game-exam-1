@@ -1,21 +1,21 @@
 {
-  "name": "planets-game-origin",
-  "version": "1.1.0",
+  "name": "planets-game-origin-202001",
+  "version": "1.2.0",
   "private": true,
   "dependencies": {
-    "bootswatch": "^4.3.1",
-    "chalk": "^2.4.2",
+    "bootswatch": "^4.4.1",
+    "chalk": "^3.0.0",
     "ducks-middleware": "^1.0.2",
     "ducks-reducer": "^1.0.4",
-    "emotion": "^10.0.14",
+    "emotion": "^10.0.27",
     "object-map": "^1.0.2",
-    "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.12",
-    "react-dom": "^16.8.6",
-    "react-markdown": "^4.1.0",
-    "react-redux": "^7.1.0",
-    "react-scripts": "3.1.1",
-    "redux": "^4.0.4",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
+    "react-markdown": "^4.3.1",
+    "react-redux": "^7.1.3",
+    "react-scripts": "3.3.0",
+    "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
   },
@@ -41,14 +41,14 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/dom": "^6.1.0",
-    "@testing-library/jest-dom": "^4.1.0",
-    "@testing-library/react": "^9.1.3",
-    "@testing-library/user-event": "^7.0.0",
-    "@types/jest": "^24.0.18",
+    "@testing-library/dom": "^6.11.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^8.0.3",
+    "@types/jest": "^24.9.0",
     "escape-string-regexp": "^2.0.0",
     "pretty-format": "^24.9.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.7.4"
   },
   "prettier": {
     "trailingComma": "all"

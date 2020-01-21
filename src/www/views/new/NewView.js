@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import newGame from "../../ducks/game/actions/newGame";
-import useDispatch from "../../lib/useDispatch";
+import { useDispatch } from "../../lib";
+import { newGame } from "../../ducks";
 
 function NewPlayer({ index, setPlayers, players }) {
   const player = players[index];
@@ -56,7 +56,7 @@ function NewPlayer({ index, setPlayers, players }) {
   );
 }
 
-export default function NewView() {
+export function NewView() {
   const [mapCode, setMapCode] = useState("");
   const onMapCode = useCallback(ev => setMapCode(ev.target.value), []);
 

@@ -1,6 +1,6 @@
-import getPlayerId from "./getPlayerId";
+import { getPlayerId } from "./getPlayerId";
 
-export default function hasPlayer(state) {
+export function hasPlayer(state) {
   const playerId = getPlayerId(state);
   return !!playerId;
 }

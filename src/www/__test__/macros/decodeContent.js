@@ -1,8 +1,8 @@
-import AllMacro from "../macros/AllMacro";
+import { AllMacro } from "./";
 
 let allMacro = new AllMacro();
 
-export default function decodeContent(pre, firstLineNumber, content) {
+export function decodeContent(pre, firstLineNumber, content) {
   const lines = content.split("\n");
   const instructions = lines.map((source, index) => ({
     line: pre + (firstLineNumber + index),

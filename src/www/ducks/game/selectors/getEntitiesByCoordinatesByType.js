@@ -1,13 +1,11 @@
 import { createSelector } from "reselect";
-import groupBy from "../../../lib/groupBy";
-import listEntitiesAtCoordinate from "./listEntitiesAtCoordinate";
+import { groupBy } from "../../../lib";
+import { listEntitiesAtCoordinate } from "./listEntitiesAtCoordinate";
 
 function makeGetEntitiesAtCoordinateByType() {
-  return createSelector(
-    listEntitiesAtCoordinate,
-    entities => groupBy(entities, "type"),
+  return createSelector(listEntitiesAtCoordinate, entities =>
+    groupBy(entities, "type"),
   );
 }
 
-const getEntitiesAtCoordinateByType = makeGetEntitiesAtCoordinateByType();
-export default getEntitiesAtCoordinateByType;
+export const getEntitiesAtCoordinateByType = makeGetEntitiesAtCoordinateByType();

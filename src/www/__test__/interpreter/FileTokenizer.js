@@ -1,4 +1,4 @@
-export default class FileTokenizer {
+export class FileTokenizer {
   constructor(file) {
     this._textLines = file.split("\n");
     this._currentIndex = 0;

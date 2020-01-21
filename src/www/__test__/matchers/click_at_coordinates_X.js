@@ -1,5 +1,5 @@
 import { getByTestId } from "@testing-library/dom";
-import AbstractMatcher from "./AbstractMatcher";
+import { AbstractMatcher } from "./";
 
 export default class extends AbstractMatcher {
   constructor() {

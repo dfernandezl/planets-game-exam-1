@@ -1,3 +1,5 @@
-import middleware from "./middleware/index";
+import { gameViewMiddleware } from "./middleware";
 
-export { middleware };
+export const gameViewDuck = {
+  middleware: gameViewMiddleware,
+};

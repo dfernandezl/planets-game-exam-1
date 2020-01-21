@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AACA,KACE,iBACF,CAEA,sBACE,eAAgB,CAChB,wCAA2C,CAC3C,gBACF","file":"main.7b99319e.chunk.css","sourcesContent":["/* https://codepen.io/giuliacardieri/pen/EypPdg */\nbody {\n  position: relative;\n}\n\n.container blockquote {\n  margin-left: 2em;\n  border-left: 5px solid rgba(255,255,255,.3);\n  padding-left: 1em;\n}\n"]}

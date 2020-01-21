@@ -1,7 +1,5 @@
-function reduceReplaceAlert(state, action) {
+export function reduceReplaceAlert(state, action) {
   return {
-    text: action.text
+    text: action.text,
   };
 }
-
-export default reduceReplaceAlert;

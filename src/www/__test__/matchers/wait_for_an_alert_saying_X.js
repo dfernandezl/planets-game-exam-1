@@ -1,6 +1,6 @@
 import { findByTestId, getByText } from "@testing-library/dom";
-import AbstractMatcher from "./AbstractMatcher";
-import convertTextToInsensitiveRegExp from "./helpers/convertTextToInsensitiveRegExp";
+import { AbstractMatcher } from "./";
+import { convertTextToInsensitiveRegExp } from "./helpers";
 
 export default class extends AbstractMatcher {
   constructor() {

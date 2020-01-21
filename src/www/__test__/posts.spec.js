@@ -1,6 +1,6 @@
 import { getByTestId, getByText, findByText } from "@testing-library/dom";
 import api from "../lib/api";
-import renderApp from "./renderApp";
+import { renderApp } from "./renderApp";
 jest.mock("../lib/api");
 
 function clickMainHeaderLink(container, linkText) {

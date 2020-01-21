@@ -1,9 +1,7 @@
-import { REPLACE_GAME } from "../actions/replaceGame";
-import reduceReplaceGame from "./reduceReplaceGame";
-import { LOGOUT_GAME } from "../actions/logoutGame";
-import reduceLogoutGame from "./reduceLogoutGame";
+import { REPLACE_GAME, LOGOUT_GAME } from "../actions";
+import { reduceReplaceGame, reduceLogoutGame } from "./private";
 
-export default function reduceGame(state = null, action) {
+export function reduceGame(state = null, action) {
   switch (action.type) {
     case LOGOUT_GAME:
       return reduceLogoutGame(state, action);

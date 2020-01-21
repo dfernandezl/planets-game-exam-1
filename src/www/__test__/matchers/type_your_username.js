@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import { getByLabelText } from "@testing-library/dom";
-import AbstractMatcher from "./AbstractMatcher";
+import { AbstractMatcher } from "./";
 
 export default class extends AbstractMatcher {
   constructor() {

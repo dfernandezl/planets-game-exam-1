@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import getBlog from "./getBlog";
+import { getBlog } from "./getBlog";
 
 function compareIds(a, b) {
   if (a.id < b.id) return +1;
@@ -8,11 +8,7 @@ function compareIds(a, b) {
 }
 
 function makeListPosts() {
-  return createSelector(
-    getBlog,
-    blog => Object.values(blog).sort(compareIds),
-  );
+  return createSelector(getBlog, blog => Object.values(blog).sort(compareIds));
 }
 
-const listPosts = makeListPosts();
-export default listPosts;
+export const listPosts = makeListPosts();

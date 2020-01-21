@@ -1,6 +1,6 @@
-import AbstractRegExpMacro from "./AbstractRegExpMacro";
+import { AbstractRegExpMacro } from "./";
 
-export default class ResumeMatcherMacro extends AbstractRegExpMacro {
+export class ResumeMatcherMacro extends AbstractRegExpMacro {
   constructor() {
     super(/\s+<!--\s+RESUME\s+MATCHER\s+-+->/);
   }

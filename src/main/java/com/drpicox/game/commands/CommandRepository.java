@@ -8,6 +8,6 @@ import java.util.List;
 public interface CommandRepository extends JpaRepository<Command, CommandId> {
 
     List<Command> findAllByPlayer(Player player);
-
     List<Command> findAllByTypeOrderByEntityAsc(String type);
+
 }

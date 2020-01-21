@@ -1,3 +1,3 @@
-export default function reduceLogoutGame(state, action) {
+export function reduceLogoutGame(state, action) {
   return {};
 }

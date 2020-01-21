@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import useDispatch from "./useDispatch";
+import { useDispatch } from "./useDispatch";
 
 function useSubmitDispatch(actionCreator, ...args) {
   const dispatch = useDispatch(actionCreator, ...args);
@@ -8,7 +8,7 @@ function useSubmitDispatch(actionCreator, ...args) {
       event.preventDefault();
       dispatch();
     },
-    [dispatch]
+    [dispatch],
   );
 }
 

@@ -29,7 +29,6 @@ public class SaveSnapshots implements Consumer<Context> {
         } catch (Exception reason) {
             throw new RuntimeException("Cannot write post snapshots " + postId, reason);
         }
-        System.out.println(value);
     }
 
     private File getSnapshotFile(String postId) {

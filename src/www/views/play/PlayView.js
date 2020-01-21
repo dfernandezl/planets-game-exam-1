@@ -1,15 +1,10 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import LoginView from "../login/LoginView";
-import useSelect from "../../lib/useSelect";
-import hasPlayer from "../../ducks/game/selectors/hasPlayer";
-import MapView from "../map/MapView";
-import MessagesView from "../map/MessagesView";
-import CellView from "../cell/CellView";
-import MapStatsView from "./MapStatsView";
-import getView from "../../ducks/view/selectors/getView";
+import { useSelect } from "../../lib";
+import { hasPlayer, getView } from "../../ducks";
+import { LoginView, CellView, MapView, MessagesView, MapStatsView } from "../";
 
-function PlayView() {
+export function PlayView() {
   const logged = useSelect(hasPlayer);
   const coordinates = useSelect(getView, "coordinates");
 
@@ -29,5 +24,3 @@ function PlayView() {
     </>
   );
 }
-
-export default PlayView;

@@ -11,12 +11,10 @@ const versionClass = css`
   z-index: 1000;
 `;
 
-function Version() {
+export function Version() {
   return (
     <div className={versionClass}>
       {pkg.name} (v{pkg.version})
     </div>
   );
 }
-
-export default Version;

@@ -1,5 +1,5 @@
-import { setView } from "../../view/actions/setView";
+import { setView } from "../../view";
 
-export default async function whenReplaceGame(store, action) {
+export async function whenReplaceGame(store, action) {
   store.dispatch(setView({ root: "Play", coordinates: null }));
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-export default function ShipDescription({ entity }) {
+export function ShipDescription({ entity }) {
   const { name, population, maxPopulation, fuel, maxFuel } = entity;
 
   return (

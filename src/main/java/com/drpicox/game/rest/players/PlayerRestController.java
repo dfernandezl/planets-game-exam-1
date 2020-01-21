@@ -22,16 +22,14 @@ public class PlayerRestController {
     private EntityController entityController;
     private PlayerController playerController;
     private StarController starController;
-    private MapBuilderCollector mapBuilderCollector;
     private GameController gameController;
     private CommandController commandController;
     private MapController mapController;
 
-    public PlayerRestController(EntityController entityController, PlayerController playerController, StarController starController, MapBuilderCollector mapBuilderCollector, GameController gameController, CommandController commandController, MapController mapController) {
+    public PlayerRestController(EntityController entityController, PlayerController playerController, StarController starController, GameController gameController, CommandController commandController, MapController mapController) {
         this.entityController = entityController;
         this.playerController = playerController;
         this.starController = starController;
-        this.mapBuilderCollector = mapBuilderCollector;
         this.gameController = gameController;
         this.commandController = commandController;
         this.mapController = mapController;
@@ -80,7 +78,7 @@ public class PlayerRestController {
     }
 
     @PostMapping("/{playerId}/compile")
-    public PlayerGameResponse compileGame(@PathVariable String playerId, @RequestBody @Nullable List<CommandForm> commands) {
+    public PlayerGameResponse compileGame(@PathVariable String playerId, @RequestBody List<CommandForm> commands) {
         var player = playerController.get(playerId);
         saveCommands(commands, player);
         gameController.compile();

@@ -1,5 +1,3 @@
-function getAlert(state) {
+export function getAlert(state) {
   return state.alert;
 }
-
-export default getAlert;

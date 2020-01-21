@@ -1,17 +1,9 @@
-import * as alert from "./alert/index";
-import * as blog from "./blog/index";
-import * as game from "./game/index";
-import * as gameCommands from "./gameCommands/index";
-import * as gameView from "./gameView/index";
-import * as view from "./view/index";
+export * from "./alert";
+export * from "./blog";
+export * from "./game";
+export * from "./gameCommands";
+export * from "./gameView";
+export * from "./view";
 
-const ducks = {
-  alert,
-  blog,
-  game,
-  gameCommands,
-  gameView,
-  view,
-};
-
-export default ducks;
+export * from "./appDucks";
+export * from "./createDucksStore";

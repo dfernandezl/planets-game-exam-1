@@ -1,8 +1,7 @@
 import React from "react";
-import descriptors from "./descriptors";
-import Entity from "./Entity";
+import { descriptors, Entity } from "./";
 
-export default function Entities({ entities }) {
+export function Entities({ entities }) {
   return (
     <>
       {descriptors.flatMap(descriptor =>
