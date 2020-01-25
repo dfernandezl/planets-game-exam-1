@@ -16,6 +16,7 @@ public class Star extends Entity {
     private int population;
     private int minerals;
     private int mineralsReserve;
+    private int populationBoost;
 
     public Star(String name, Coordinates coordinates, int size, int population) {
         super(name, coordinates, "star");
@@ -23,6 +24,7 @@ public class Star extends Entity {
         this.population = population;
         this.minerals = 5;
         this.mineralsReserve = size;
+        this.populationBoost = 0;
     }
     public Star() {} // JPA constructor
 
@@ -50,6 +52,8 @@ public class Star extends Entity {
         result.put("maxPopulation", getMaxPopulation());
         result.put("minerals", minerals);
         result.put("mineralsReserve", mineralsReserve);
+        result.put("populationBoost", populationBoost);
+
         return result;
     }
 
@@ -60,7 +64,7 @@ public class Star extends Entity {
     void reproducePopulation() {
         if (!hasPlayer()) return;
         var fertility = getPlayer().getRace().getFertility();
-        this.population = normalizePopulation((int) (population * fertility));
+        this.population = normalizePopulation((int) (population * fertility) + populationBoost);
     }
 
     void looseBattle(Player player, int survivors) {
@@ -101,4 +105,7 @@ public class Star extends Entity {
         return max(0, min(getMaxPopulation(), population));
     }
 
+    public void boostPoplation() {
+        populationBoost += 1;
+    }
 }

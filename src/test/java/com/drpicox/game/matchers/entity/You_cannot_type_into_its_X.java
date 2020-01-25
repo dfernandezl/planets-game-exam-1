@@ -10,9 +10,9 @@ import java.util.regex.MatchResult;
 import static com.drpicox.game.matchers.entity.EntityHelpers.insertCommand;
 
 @Component
-public class You_cannot_type_into_its_build_droids extends EntityInstructionMatcher {
-    public You_cannot_type_into_its_build_droids() {
-        super("You cannot type into its _build droids_");
+public class You_cannot_type_into_its_X extends EntityInstructionMatcher {
+    public You_cannot_type_into_its_X() {
+        super("You cannot type into its _[^_]+_");
     }
 
     @Override

@@ -9,6 +9,7 @@ export function StarDescription({ entity }) {
     playerId,
     minerals,
     mineralsReserve,
+    populationBoost,
   } = entity;
 
   return (
@@ -34,6 +35,12 @@ export function StarDescription({ entity }) {
             <strong>Minerals</strong>:{" "}
             <span data-testid="minerals-availability">{minerals}</span>[
             <span data-testid="minerals-reserve">{mineralsReserve}</span>]
+          </div>
+        )}
+        {populationBoost != null && (
+          <div>
+            <strong>Population boost</strong>:{" "}
+            <span data-testid="population-boost">{populationBoost}</span>
           </div>
         )}
       </Card.Body>

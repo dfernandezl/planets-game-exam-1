@@ -77,4 +77,9 @@ public class StarController {
         star.addPopulation(amount);
         starRepository.save(star);
     }
+
+    public void boostPopulation(Star star) {
+        star.boostPoplation();
+        starRepository.save(star);
+    }
 }

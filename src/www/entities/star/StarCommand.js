@@ -20,6 +20,15 @@ export function StarCommand({ entity }) {
     setStarbaseName,
   ]);
 
+  const [satelliteName, setSatelliteName] = useCommandValue(
+    entity.id,
+    "BuildSatellite",
+    "",
+  );
+  const onSatelliteName = useCallback(ev => setSatelliteName(ev.target.value), [
+    setSatelliteName,
+  ]);
+
   const [droids, setDroids] = useCommandValue(entity.id, "BuildDroids", 0);
   const onDroids = useCallback(ev => setDroids(ev.target.value), [setDroids]);
 
@@ -44,6 +53,16 @@ export function StarCommand({ entity }) {
             placeholder="Starbases name"
           />
         </Form.Group>
+        {race === "reptilian" && (
+          <Form.Group controlId="newSatelliteName">
+            <Form.Label>New satellite name</Form.Label>
+            <Form.Control
+              value={satelliteName}
+              onChange={onSatelliteName}
+              placeholder="Satellites name"
+            />
+          </Form.Group>
+        )}
         {race === "droid" && (
           <Form.Group controlId="buildDroids">
             <Form.Label>Build droids</Form.Label>
