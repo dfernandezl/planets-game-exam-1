@@ -105,7 +105,7 @@ public class Star extends Entity {
         return max(0, min(getMaxPopulation(), population));
     }
 
-    public void boostPoplation() {
-        populationBoost += 1;
+    public void boostPoplation(int level) {
+        populationBoost += level;
     }
 }

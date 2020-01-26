@@ -79,7 +79,11 @@ public class StarController {
     }
 
     public void boostPopulation(Star star) {
-        star.boostPoplation();
+        boostPopulation(star, 1);
+    }
+
+    public void boostPopulation(Star star, int level) {
+        star.boostPoplation(level);
         starRepository.save(star);
     }
 }

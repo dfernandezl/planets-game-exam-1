@@ -4,6 +4,7 @@ import com.drpicox.game.commands.CommandController;
 import com.drpicox.game.entities.Entity;
 import com.drpicox.game.messages.MessageController;
 import com.drpicox.game.players.Player;
+import com.drpicox.game.satellite.Satellite;
 import com.drpicox.game.satellite.SatelliteController;
 import com.drpicox.game.ships.ShipController;
 import com.drpicox.game.stars.Star;
@@ -11,7 +12,7 @@ import com.drpicox.game.stars.StarController;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CR501StarBuildSatellite implements CommandRunner {
+public class CR501UpgradeSatellite implements CommandRunner {
 
     private CommandController commandController;
     private ShipController shipController;
@@ -19,7 +20,7 @@ public class CR501StarBuildSatellite implements CommandRunner {
     private StarController starController;
     private SatelliteController satelliteController;
 
-    public CR501StarBuildSatellite(CommandController commandController, ShipController shipController, MessageController messageController, StarController starController, SatelliteController satelliteController) {
+    public CR501UpgradeSatellite(CommandController commandController, ShipController shipController, MessageController messageController, StarController starController, SatelliteController satelliteController) {
         this.commandController = commandController;
         this.shipController = shipController;
         this.messageController = messageController;
@@ -34,23 +35,22 @@ public class CR501StarBuildSatellite implements CommandRunner {
 
     @Override
     public void run() {
-        var commands = commandController.listAllByType("BuildSatellite");
+        var commands = commandController.listAllByType("UpgradeSatellite");
 
         for (var command : commands) {
             var player = command.getPlayer();
             var entity = command.getEntity();
             var name = command.getValue();
-            buildSatellite(player, entity, name);
+            upgradeSatellite(player, entity, name);
         }
     }
 
-    private void buildSatellite(Player player, Entity entity, String name) {
-        var star = (Star) entity;
+    private void upgradeSatellite(Player player, Entity entity, String name) {
+        var satellite = (Satellite) entity;
+        var star = starController.getStar(satellite.getCoordinates());
 
-        var hasMinerals = starController.consumeMinerals(star,7);
-        if (hasMinerals) {
-            starController.boostPopulation(star);
-            satelliteController.createSatellite(player, name, star.getCoordinates());
-        }
+        starController.consumeMinerals(star,2);
+        starController.boostPopulation(star, satellite.getLevel());
+        satelliteController.upgradeLevel(satellite);
     }
 }
